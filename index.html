@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -160,6 +161,24 @@
             console.log("SYSTEM: RETURNED TO NORMAL.");
         }
     }
+</script>
+    <script>
+    // 隠しコマンド（例：上上下下左右左右BA）
+    const secretCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+    let inputCode = [];
+
+    window.addEventListener('keydown', (e) => {
+        inputCode.push(e.key);
+        inputCode = inputCode.slice(-secretCode.length); // 最新の入力分だけ保持
+
+        if (JSON.stringify(inputCode) === JSON.stringify(secretCode)) {
+            console.log("SECRET ACCESS DETECTED...");
+            document.body.style.filter = "invert(100%)"; // 画面を反転させてから飛ばす
+            setTimeout(() => {
+                window.location.href = 'secret.html';
+            }, 1000);
+        }
+    });
 </script>
 </body>
 </html>
