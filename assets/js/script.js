@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('SYSTEM ONLINE: 114514-CO UNIFIED ARCHITECTURE CONNECTED...');
 
     // 1. 共通パーツの読み込み (Header / Footer)
-    loadComponent("common-header", "assets/inc/header.html");
-    loadComponent("common-footer", "assets/inc/footer.html");
+loadComponent("common-header", "assets/inc/header.inc");
+loadComponent("common-footer", "assets/inc/footer.inc");
 
     // 2. マウス連動のアンビエントライト効果
     initAmbientLight();
