@@ -2,12 +2,37 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>404 NOT FOUND</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 NOT FOUND | 114514 & Co.</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body style="display: flex; align-items: center; justify-content: center; height: 100vh; flex-direction: column;">
-    <h1 class="section-title" style="color: #333;">404 - LOST DATA</h1>
-    <p>お前の探しているデータは、ここにはないゾ</p>
-    <a href="index.html" class="btn">ぬわあああん戻る</a>
+<body class="error-wrapper">
+
+    <h1 class="error-title">ERROR_CODE: 404</h1>
+    
+    <div style="text-align: center; margin-bottom: 40px;">
+        <h2 style="font-size: 3rem; font-weight: 200; margin: 0;">LOST IN DATA.</h2>
+        <p style="color: var(--text-sub); margin-top: 15px; font-size: 0.9rem;">
+            お探しのリソースは存在しないか、移動された可能性があります。
+        </p>
+    </div>
+
+    <a href="index.html" class="btn" style="
+        background: transparent; 
+        border: 1px solid var(--accent-silver); 
+        color: var(--accent-silver); 
+        padding: 12px 40px; 
+        text-decoration: none; 
+        font-size: 0.8rem;
+        transition: 0.3s;
+        letter-spacing: 0.2em;">
+        RETURN TO BASE
+    </a>
+
+    <footer style="position: absolute; bottom: 30px; font-size: 0.7rem; color: #333;">
+        &copy; 2026 114514 & Co. UNIFIED SYSTEMS
+    </footer>
+
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

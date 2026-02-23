@@ -2,34 +2,66 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News | 114514 & Co.</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <div id="ambient-light"></div>
+
     <nav>
         <a href="index.html" class="nav-logo">114514 & Co.</a>
-        <div class="nav-links">
-            <a href="news.html" style="color:var(--neon-green);">NEWS</a>
+        <div class="menu-toggle" id="mobile-menu" onclick="mobileMenu()">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </div>
+        <div class="nav-links" id="nav-list">
+            <a href="news.html" style="color: var(--primary-accent);">NEWS</a>
             <a href="games.html">GAMES</a>
+            <a href="gallery.html">GALLERY</a>
             <a href="company.html">COMPANY</a>
         </div>
     </nav>
 
-    <div class="container" style="margin-top:100px;">
-        <h2 class="section-title">NEWS RELEASE</h2>
+    <main class="container">
+        <h2 class="section-title reveal">NEWS RELEASE</h2>
         
-        <article class="contact-section">
-            <span style="color:var(--neon-green);">2026.02.24</span>
-            <h3 style="margin: 10px 0;">公式サイト、サイバーパンク仕様へアップデート</h3>
-            <p>視覚・聴覚に訴えかける「エグい」デザインへのフルリニューアルが完了しました。妥協なんて必要ねぇんだよ！</p>
-        </article>
+        <p class="reveal" style="text-align: center; margin-bottom: 80px; color: var(--secondary-accent); font-size: 0.8rem; letter-spacing: 0.3em;">
+            LATEST ANNOUNCEMENTS
+        </p>
 
-        <article class="contact-section">
-            <span style="color:var(--neon-pink);">2026.02.20</span>
-            <h3 style="margin: 10px 0;">組織「114514 & Co.」設立</h3>
-            <p>次世代の「王道を往く」ゲーム開発のため、新たな組織が爆誕しました。入って、どうぞ。</p>
-        </article>
-    </div>
-    <script src="script.js"></script>
+        <div class="news-list">
+            <article class="reveal" style="border-bottom: 1px solid var(--border-color); padding: 40px 0; display: grid; grid-template-columns: 150px 1fr; gap: 20px;">
+                <div style="color: var(--secondary-accent); font-size: 0.8rem; font-weight: 200; padding-top: 5px;">
+                    2026.02.24
+                </div>
+                <div>
+                    <h3 style="font-size: 1.25rem; margin: 0 0 15px 0; font-weight: 600;">ブランド・アイデンティティの再定義</h3>
+                    <p style="color: var(--secondary-accent); font-size: 0.9rem; margin-bottom: 20px;">
+                        公式サイトの Luxury Modern へのフルリニューアルが完了。装飾を削ぎ落とし、クオリティそのもので語る新たなフェーズへ移行しました。
+                    </p>
+                    <a href="#" style="color: var(--primary-accent); font-size: 0.7rem; text-decoration: none; border-bottom: 1px solid var(--secondary-accent); padding-bottom: 2px;">READ MORE</a>
+                </div>
+            </article>
+
+            <article class="reveal" style="border-bottom: 1px solid var(--border-color); padding: 40px 0; display: grid; grid-template-columns: 150px 1fr; gap: 20px;">
+                <div style="color: var(--secondary-accent); font-size: 0.8rem; font-weight: 200; padding-top: 5px;">
+                    2026.02.20
+                </div>
+                <div>
+                    <h3 style="font-size: 1.25rem; margin: 0 0 15px 0; font-weight: 600;">組織「114514 & Co.」設立のお知らせ</h3>
+                    <p style="color: var(--secondary-accent); font-size: 0.9rem; margin-bottom: 20px;">
+                        次世代の「王道を往く」ゲーム開発のため、新たな組織が始動。私たちのビジョンに妥協はありません。
+                    </p>
+                    <a href="#" style="color: var(--primary-accent); font-size: 0.7rem; text-decoration: none; border-bottom: 1px solid var(--secondary-accent); padding-bottom: 2px;">READ MORE</a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 114514 & Co. All Rights Reserved.
+    </footer>
+
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

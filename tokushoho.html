@@ -2,76 +2,87 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legal Notice | 114514 & Co.</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <div id="ambient-light"></div>
+
     <nav>
         <a href="index.html" class="nav-logo">114514 & Co.</a>
-        <div class="nav-links">
-            <a href="index.html">HOME</a>
+        <div class="menu-toggle" id="mobile-menu" onclick="mobileMenu()">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </div>
+        <div class="nav-links" id="nav-list">
+            <a href="news.html">NEWS</a>
             <a href="games.html">GAMES</a>
-            <a href="tokushoho.html" style="color:var(--neon-green);">LEGAL</a>
+            <a href="gallery.html">GALLERY</a>
+            <a href="company.html">COMPANY</a>
         </div>
     </nav>
 
-    <div class="container" style="margin-top:100px;">
-        <h2 class="section-title">特定商取引法に基づく表記</h2>
+    <main class="container">
+        <h2 class="section-title reveal" style="font-size: clamp(2rem, 5vw, 3rem);">LEGAL NOTICE</h2>
         
-        <div class="recruit-box" style="text-align: left;">
-            <table class="info-table">
-                <tr>
-                    <th>販売業者</th>
-                    <td>114514 & Co. (イチイチヨンゴーイチヨン・アンド・カンパニー)</td>
-                </tr>
-                <tr>
-                    <th>代表責任者</th>
-                    <td>[あなたの本名 または 組織代表名]</td>
-                </tr>
-                <tr>
-                    <th>所在地</th>
-                    <td>東京都世田谷区[以下、請求により遅滞なく開示します]</td>
-                </tr>
-                <tr>
-                    <th>電話番号</th>
-                    <td>[請求により遅滞なく開示します]</td>
-                </tr>
-                <tr>
-                    <th>メールアドレス</th>
-                    <td>your-email@example.com</td>
-                </tr>
-                <tr>
-                    <th>販売価格</th>
-                    <td>各アプリ・サービス内の購入ページに表示</td>
-                </tr>
-                <tr>
-                    <th>商品代金以外の必要料金</th>
-                    <td>インターネット接続料金、通信料金等</td>
-                </tr>
-                <tr>
-                    <th>支払方法</th>
-                    <td>Google Play ストア / App Store が提供する決済手段</td>
-                </tr>
-                <tr>
-                    <th>支払時期</th>
-                    <td>商品購入確定時</td>
-                </tr>
-                <tr>
-                    <th>商品の引渡時期</th>
-                    <td>決済完了後、直ちに提供（アプリ内課金等）</td>
-                </tr>
-                <tr>
-                    <th>返品・交換・キャンセル</th>
-                    <td>デジタルコンテンツの性質上、返品・返金は承っておりません。</td>
-                </tr>
-            </table>
-        </div>
-    </div>
+        <p class="reveal" style="text-align: center; margin-bottom: 60px; color: var(--secondary-accent); font-size: 0.8rem; letter-spacing: 0.1em;">
+            特定商取引法に基づく表記
+        </p>
 
-    <footer style="text-align:center; padding:40px; color:#666;">
-        &copy; 2026 114514 & Co.
+        <section class="reveal" style="max-width: 800px; margin: 0 auto 100px;">
+            <div class="recruit-box" style="text-align: left; padding: 60px 40px; border-radius: 2px;">
+                
+                <div style="display: flex; flex-direction: column; gap: 25px;">
+                    
+                    <dl style="display: grid; grid-template-columns: 200px 1fr; gap: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px;">
+                        <dt style="color: var(--secondary-accent); font-size: 0.75rem; letter-spacing: 0.1em;">販売業者</dt>
+                        <dd style="margin: 0; font-weight: 600;">114514 & Co.</dd>
+                    </dl>
+
+                    <dl style="display: grid; grid-template-columns: 200px 1fr; gap: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px;">
+                        <dt style="color: var(--secondary-accent); font-size: 0.75rem;">代表責任者</dt>
+                        <dd style="margin: 0;">[代表者名を記入]</dd>
+                    </dl>
+
+                    <dl style="display: grid; grid-template-columns: 200px 1fr; gap: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px;">
+                        <dt style="color: var(--secondary-accent); font-size: 0.75rem;">所在地</dt>
+                        <dd style="margin: 0;">東京都世田谷区<br><span style="font-size: 0.8rem; color: #555;">(以下、請求により遅滞なく開示します)</span></dd>
+                    </dl>
+
+                    <dl style="display: grid; grid-template-columns: 200px 1fr; gap: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px;">
+                        <dt style="color: var(--secondary-accent); font-size: 0.75rem;">メールアドレス</dt>
+                        <dd style="margin: 0;">your-email@example.com</dd>
+                    </dl>
+
+                    <dl style="display: grid; grid-template-columns: 200px 1fr; gap: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px;">
+                        <dt style="color: var(--secondary-accent); font-size: 0.75rem;">販売価格</dt>
+                        <dd style="margin: 0;">各サービス内の購入ページに表示</dd>
+                    </dl>
+
+                    <dl style="display: grid; grid-template-columns: 200px 1fr; gap: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px;">
+                        <dt style="color: var(--secondary-accent); font-size: 0.75rem;">支払方法</dt>
+                        <dd style="margin: 0;">プラットフォーム決済 (App Store / Google Play)</dd>
+                    </dl>
+
+                    <dl style="display: grid; grid-template-columns: 200px 1fr; gap: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px;">
+                        <dt style="color: var(--secondary-accent); font-size: 0.75rem;">引渡時期</dt>
+                        <dd style="margin: 0;">決済完了後、直ちに提供</dd>
+                    </dl>
+
+                    <dl style="display: grid; grid-template-columns: 200px 1fr; gap: 20px;">
+                        <dt style="color: var(--secondary-accent); font-size: 0.75rem;">返品・キャンセル</dt>
+                        <dd style="margin: 0;">デジタルコンテンツの性質上、返品・返金は承っておりません。</dd>
+                    </dl>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2026 114514 & Co. All Rights Reserved.
     </footer>
 
-    <script src="script.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

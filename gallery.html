@@ -4,46 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery | 114514 & Co.</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <div id="ambient-light"></div>
+
     <nav>
         <a href="index.html" class="nav-logo">114514 & Co.</a>
-        <div class="nav-links">
+        <div class="menu-toggle" id="mobile-menu" onclick="mobileMenu()">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </div>
+        <div class="nav-links" id="nav-list">
             <a href="news.html">NEWS</a>
             <a href="games.html">GAMES</a>
-            <a href="gallery.html" style="color:var(--neon-green);">GALLERY</a>
+            <a href="gallery.html" style="color: var(--primary-accent);">GALLERY</a>
             <a href="company.html">COMPANY</a>
         </div>
     </nav>
 
-    <div class="container" style="margin-top:100px;">
-        <h2 class="section-title">VISUAL ARCHIVE</h2>
-        <p style="text-align: center; margin-bottom: 50px; color: var(--neon-pink);">[ WARNING: HIGH-RESOLUTION DATA DETECTED ]</p>
+    <main class="container">
+        <h2 class="section-title reveal">VISUALS</h2>
+        
+        <p class="reveal" style="text-align: center; margin-bottom: 80px; color: var(--secondary-accent); font-size: 0.8rem; letter-spacing: 0.3em;">
+            SELECTED ARCHIVES OF OUR CREATIVE JOURNEY
+        </p>
 
         <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="shot1.png" alt="Game Screenshot 1">
-                <div class="gallery-caption">PROTOTYPE_01</div>
+            <div class="gallery-item reveal">
+                <div class="img-container">
+                    <img src="shot1.png" alt="Prototype Archive 01">
+                </div>
+                <div class="gallery-caption">
+                    <span class="id">01</span>
+                    <span class="title">PROTOTYPE ARCHIVE</span>
+                </div>
             </div>
-            <div class="gallery-item">
-                <img src="shot2.png" alt="Game Screenshot 2">
-                <div class="gallery-caption">NEON_DISTRICT</div>
-            </div>
-            <div class="gallery-item">
-                <img src="shot3.png" alt="Game Screenshot 3">
-                <div class="gallery-caption">BATTLE_LOG_114514</div>
-            </div>
-            <div class="gallery-item">
-                <img src="shot4.png" alt="Character Concept">
-                <div class="gallery-caption">HERO_CONCEPT</div>
-            </div>
-            </div>
-    </div>
 
-    <footer style="text-align:center; padding:40px; color:#666;">
-        &copy; 2026 114514 & Co.
+            <div class="gallery-item reveal">
+                <div class="img-container">
+                    <img src="shot2.png" alt="Neon District Concept">
+                </div>
+                <div class="gallery-caption">
+                    <span class="id">02</span>
+                    <span class="title">DISTRICT CONCEPT</span>
+                </div>
+            </div>
+
+            <div class="gallery-item reveal">
+                <div class="img-container">
+                    <img src="shot3.png" alt="Battle System Log">
+                </div>
+                <div class="gallery-caption">
+                    <span class="id">03</span>
+                    <span class="title">CORE ENGINE LOG</span>
+                </div>
+            </div>
+
+            <div class="gallery-item reveal">
+                <div class="img-container">
+                    <img src="shot4.png" alt="Hero Design Concept">
+                </div>
+                <div class="gallery-caption">
+                    <span class="id">04</span>
+                    <span class="title">CHARACTER DESIGN</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 114514 & Co. All Rights Reserved.
     </footer>
-    <script src="script.js"></script>
+
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

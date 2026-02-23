@@ -1,212 +1,102 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
-    <meta name="google-site-verification" content="_coSjjmGK0lrHmc2iy3zXVJW_0QHzdgCfJUNXeRvzTI" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="114514 & Co. 公式サイト。「王道を往く」をコンセプトに、妥協のない最高品質のゲームをドバドバ展開中。最新作の情報を今すぐチェック。入って、どうぞ。">
+    <meta name="description" content="114514 & Co. 公式サイト。「王道を往く」をコンセプトに、妥協のない最高品質のゲームを展開中。">
+    <meta name="google-site-verification" content="_coSjjmGK0lrHmc2iy3zXVJW_0QHzdgCfJUNXeRvzTI" />
     <title>114514 & Co. Official | 王道を往く、次世代のゲーム開発</title>
-</head>
-<body onload="console.log('SYSTEM ONLINE: 114514-CO CONNECTED...')">
-    <div id="ambient-light"></div>
-<nav>
-    <a href="index.html" class="nav-logo">114514 & Co.</a>
     
-    <div class="menu-toggle" id="mobile-menu" onclick="mobileMenu()">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </div>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div id="ambient-light"></div>
 
-    <div class="nav-links" id="nav-list">
-        <a href="news.html">NEWS</a>
-        <a href="games.html">GAMES</a>
-        <a href="gallery.html">GALLERY</a>
-        <a href="environment.html">ENV</a>
-        <a href="company.html">COMPANY</a>
-        <a href="javascript:void(0)" onclick="toggleMode()" id="mode-switch">MODE: NORMAL</a>
-    </div>
-    <div class="search-container">
-    <input type="text" id="search-input" placeholder="SYSTEM_QUERY..." onkeyup="siteSearch()">
-    <div id="search-results"></div>
-</div>
-</nav>
+    <nav>
+        <a href="index.html" class="nav-logo">114514 & Co.</a>
+        <div class="menu-toggle" id="mobile-menu" onclick="mobileMenu()">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </div>
+        <div class="nav-links" id="nav-list">
+            <a href="news.html">NEWS</a>
+            <a href="games.html">GAMES</a>
+            <a href="gallery.html">GALLERY</a>
+            <a href="environment.html">ENV</a>
+            <a href="company.html">COMPANY</a>
+            <a href="javascript:void(0)" onclick="toggleMode()" id="mode-switch">MODE: NORMAL</a>
+        </div>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="SYSTEM_QUERY..." onkeyup="siteSearch()">
+            <div id="search-results"></div>
+        </div>
+    </nav>
+
     <header>
         <h1>114514 & Co.</h1>
         <p class="tagline">王道を往く、次世代のゲーム体験を。「いいよ、こいよ」</p>
     </header>
 
-    <div class="container">
-        <section style="margin-top: 80px;">
-    <h2 class="section-title">SCREENSHOTS</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-        <div style="background: #333; height: 400px; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
-            <span>迫真のゲーム画面1</span>
-        </div>
-        <div style="background: #333; height: 400px; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
-            <span>迫真のゲーム画面2</span>
-        </div>
-        <div style="background: #333; height: 400px; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
-            <span>迫真のゲーム画面3</span>
-        </div>
-    </div>
-</section>
+    <main class="container">
+        <section class="section-screenshots">
+            <h2 class="section-title">SCREENSHOTS</h2>
+            <div class="screenshot-grid">
+                <div class="shot-placeholder"><span>迫真のゲーム画面1</span></div>
+                <div class="shot-placeholder"><span>迫真のゲーム画面2</span></div>
+                <div class="shot-placeholder"><span>迫真のゲーム画面3</span></div>
+            </div>
+        </section>
 
-<section style="text-align: center; margin-top: 100px; border-top: 1px solid #333; padding-top: 50px;">
-    <a href="privacy.html" style="color: #666; text-decoration: none; font-size: 0.8rem;">Privacy Policy (プライバシーポリシー)</a>
-</section>
         <section>
             <h2 class="section-title">LATEST PROJECT</h2>
             <div class="game-card">
                 <div class="game-info">
                     <h3>新作ゲーム（仮称）</h3>
-                    <p>開発者が「ああ〜いいっすね〜」と自画自賛する、渾身のタイトルがついに登場。妥協なんて必要ねぇんだよ！という気概で作り込まれた圧倒的グラフィックと操作性を、君のスマホで存分に味わってくれ。</p>
+                    <p>開発者が「ああ〜いいっすね〜」と自画自賛する、渾身のタイトルがついに登場。</p>
                     <a href="#" class="btn">入って、どうぞ（Google Playへ）</a>
                 </div>
             </div>
         </section>
 
-<section id="philosophy" style="text-align: center; margin-top: 100px;">
+        <section id="philosophy">
             <h2 class="section-title">PHILOSOPHY</h2>
-            <p style="font-size: 1.2rem; font-style: italic;">
-                "面白いものを、ドバドバ出して、いく。それだけだ。"
-            </p>
-            <p>114514 & Co. は、ユーザーに「やりますねぇ！」と言わせるためだけに、日夜コードを書き続ける迫真のデベロッパー集団です。</p>
+            <p class="quote">"面白いものを、ドバドバ出して、いく。それだけだ。"</p>
+            <p>114514 & Co. は、ユーザーに「やりますねぇ！」と言わせるデベロッパー集団です。</p>
         </section>
 
         <section id="contact" class="contact-section">
-            <h2 class="section-title" style="border:none; margin-bottom: 20px;">CONTACT</h2>
-            <p>アプリの不具合報告、改善要望、その他「いいよ、こいよ」という熱いメッセージはこちらまで。</p>
-            
-            <a href="mailto:your-email@example.com?subject=114514&Co.へのお問い合わせ" class="contact-email">
-                📧 MAIL TO US
-            </a>
-
-            <p class="contact-note">※返信にはお時間をいただく場合があります。妥協なんて必要ねぇんだよ！という熱意あるご連絡をお待ちしております。</p>
+            <h2 class="section-title">CONTACT</h2>
+            <p>アプリの不具合報告、改善要望はこちらまで。</p>
+            <a href="mailto:your-email@example.com?subject=114514&Co.へのお問い合わせ" class="contact-email">📧 MAIL TO US</a>
         </section>
-        </div> 
-    <div style="text-align: center; margin: 50px 0; border-top: 1px solid #333; padding-top: 30px;">
-    <p style="letter-spacing: 5px; color: var(--neon-pink);">CONNECT WITH US</p>
-    <div style="font-size: 2rem; display: flex; justify-content: center; gap: 40px;">
-        <a href="https://x.com/your_account" target="_blank" style="text-decoration: none; color: #fff;" title="X (Twitter)">𝕏</a>
-        <a href="https://youtube.com/@your_channel" target="_blank" style="text-decoration: none; color: #fff;" title="YouTube">🎬</a>
-        <a href="https://github.com/114514-co" target="_blank" style="text-decoration: none; color: #fff;" title="GitHub">🐙</a>
-    </div>
-</div>
-    <footer>
-    &copy; 2026 114514 & Co. All Rights Reserved.<br>
-    <a href="privacy.html" style="color:#666; font-size: 0.8rem;">Privacy Policy</a> | 
-    <a href="terms.html" style="color:#666; font-size: 0.8rem;">Terms of Service</a> | 
-    <a href="tokushoho.html" style="color:#666; font-size: 0.8rem;">Legal Notice (特定商取引法)</a>
-</footer>
+    </main>
+
+    <aside class="social-footer">
+        <p class="social-label">CONNECT WITH US</p>
+        <div class="social-icons">
+            <a href="https://x.com/your_account" target="_blank" title="X">𝕏</a>
+            <a href="https://youtube.com/@your_channel" target="_blank" title="YouTube">🎬</a>
+            <a href="https://github.com/114514-co" target="_blank" title="GitHub">🐙</a>
+        </div>
+    </aside>
+
     <footer>
         &copy; 2026 114514 & Co. All Rights Reserved.<br>
-        Produced by Inm-Dev-Team
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a> | 
+            <a href="terms.html">Terms of Service</a> | 
+            <a href="tokushoho.html">Legal Notice</a>
+        </div>
+        <p class="producer">Produced by Inm-Dev-Team</p>
     </footer>
-<div id="cookie-banner">
-    <p>当サイトでは「いいよ、こいよ」という気持ちでCookieを使用して品質を向上させています。同意して、どうぞ。</p>
-    <button class="cookie-btn" onclick="acceptCookie()">承諾</button>
-</div>
 
-<a href="#" id="back-to-top">↑</a>
-
-<script>
-    // Cookie承諾の処理
-    function acceptCookie() {
-        document.getElementById('cookie-banner').style.display = 'none';
-        // ここにクッキー保存処理を書くことも可能ですが、とりあえず消すだけで「それっぽさ」は出ます。
-    }
-
-    // スクロールで「戻るボタン」を表示させる
-    const backToTop = document.getElementById('back-to-top');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            backToTop.classList.add('show');
-        } else {
-            backToTop.classList.remove('show');
-        }
-    });
-</script>
+    <div id="cookie-banner">
+        <p>当サイトではCookieを使用して品質を向上させています。同意して、どうぞ。</p>
+        <button class="cookie-btn" onclick="acceptCookie()">承諾</button>
+    </div>
+    <a href="#" id="back-to-top">↑</a>
     <div id="bgm-control" onclick="toggleBGM()">🔊 SYSTEM SOUND: OFF</div>
-<audio id="myBGM" loop>
-    <source src="bgm.mp3" type="audio/mpeg">
-</audio>
+    <audio id="myBGM" loop><source src="bgm.mp3" type="audio/mpeg"></audio>
 
-<script>
-    const bgm = document.getElementById('myBGM');
-    const btn = document.getElementById('bgm-control');
-    let isPlaying = false;
-
-    function toggleBGM() {
-        if (isPlaying) {
-            bgm.pause();
-            btn.innerText = '🔊 SYSTEM SOUND: OFF';
-            document.body.classList.remove('shaking'); // 止めると揺れも止まる
-        } else {
-            bgm.play();
-            btn.innerText = '🔊 SYSTEM SOUND: ON (HYPER)';
-            document.body.classList.add('shaking'); // 音が出ると画面も震える（エグい）
-            isPlaying = true;
-        }
-    }
-
-    // ページをクリックした時に「警告音」っぽいのを出すならここ
-    window.addEventListener('click', () => {
-        console.log("114514 ACCESS DETECTED...");
-    });
-</script>
-    <script>
-    function toggleMode() {
-        const body = document.body;
-        const btn = document.getElementById('mode-switch');
-        
-        body.classList.toggle('overdrive-mode');
-        
-        if (body.classList.contains('overdrive-mode')) {
-            btn.innerText = 'MODE: OVERDRIVE';
-            btn.style.borderColor = '#ff00ff';
-            btn.style.color = '#ff00ff';
-            console.log("CRITICAL: OVERDRIVE MODE ACTIVATED.");
-        } else {
-            btn.innerText = 'MODE: NORMAL';
-            btn.style.borderColor = '';
-            btn.style.color = '';
-            console.log("SYSTEM: RETURNED TO NORMAL.");
-        }
-    }
-</script>
-    <script>
-    // 隠しコマンド（例：上上下下左右左右BA）
-    const secretCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-    let inputCode = [];
-
-    window.addEventListener('keydown', (e) => {
-        inputCode.push(e.key);
-        inputCode = inputCode.slice(-secretCode.length); // 最新の入力分だけ保持
-
-        if (JSON.stringify(inputCode) === JSON.stringify(secretCode)) {
-            console.log("SECRET ACCESS DETECTED...");
-            document.body.style.filter = "invert(100%)"; // 画面を反転させてから飛ばす
-            setTimeout(() => {
-                window.location.href = 'secret.html';
-            }, 1000);
-        }
-    });
-        function mobileMenu() {
-    const menu = document.getElementById('mobile-menu');
-    const navList = document.getElementById('nav-list');
-
-    menu.classList.toggle('is-active');
-    navList.classList.toggle('active');
-
-    // 開いた時にコンソールにログを出す（エグい演出）
-    if(navList.classList.contains('active')) {
-        console.log("MOBILE ACCESS GRANTED. OVERRIDE MENU...");
-    }
-}
-</script>
-    <script src="script.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

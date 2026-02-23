@@ -2,30 +2,68 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy | 114514 & Co.</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <div id="ambient-light"></div>
+
     <nav>
         <a href="index.html" class="nav-logo">114514 & Co.</a>
+        <div class="menu-toggle" id="mobile-menu" onclick="mobileMenu()">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </div>
+        <div class="nav-links" id="nav-list">
+            <a href="news.html">NEWS</a>
+            <a href="games.html">GAMES</a>
+            <a href="gallery.html">GALLERY</a>
+            <a href="company.html">COMPANY</a>
+        </div>
     </nav>
 
-    <div class="container reveal" style="margin-top:120px; max-width: 800px; margin-left: auto; margin-right: auto;">
-        <h2 class="section-title" style="font-size: 2.5rem;">Privacy Policy</h2>
-        
-        <div class="recruit-box" style="text-align: left; line-height: 2;">
-            <h3>1. 個人情報の収集と利用</h3>
-            <p>当組織は、ユーザーの利便性向上およびサービス改善のため、最小限の個人情報を収集する場合があります。収集した情報は、目的外の利用は行いません。</p>
+    <main class="container">
+        <h2 class="section-title reveal" style="font-size: clamp(2rem, 5vw, 3rem);">PRIVACY POLICY</h2>
 
-            <h3>2. アクセス解析ツールの使用</h3>
-            <p>当サイトでは、Googleによるアクセス解析ツール「Googleアナリティクス（GA4）」を使用しています。このGoogleアナリティクスはデータの収集のためにCookieを使用しています。このデータは匿名で収集されており、個人を特定するものではありません。</p>
-            
-            <p>この機能はCookieを無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。この規約に関しての詳細は<a href="https://marketingplatform.google.com/about/analytics/terms/jp/" style="color:var(--primary-white);">Googleアナリティクスサービス利用規約</a>のページや<a href="https://policies.google.com/technologies/ads?hl=ja" style="color:var(--primary-white);">Googleポリシーと規約</a>ページをご覧ください。</p>
+        <div class="reveal" style="max-width: 750px; margin: 0 auto 100px;">
+            <div class="recruit-box" style="text-align: left; padding: 60px 40px; border-radius: 2px;">
+                
+                <section style="margin-bottom: 50px;">
+                    <h3 style="font-size: 1.1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; margin-bottom: 20px; font-weight: 600;">1. 個人情報の収集と利用</h3>
+                    <p style="color: var(--secondary-accent); font-size: 0.95rem;">
+                        当組織は、ユーザーの利便性向上およびサービス改善のため、最小限の個人情報を収集する場合があります。収集した情報は、明示した目的外の利用は行いません。
+                    </p>
+                </section>
 
-            <h3>3. 免責事項</h3>
-            <p>当サイトからリンクやバナーなどによって他のサイトに移動された場合、移動先サイトで提供される情報、サービス等について一切の責任を負いません。</p>
+                <section style="margin-bottom: 50px;">
+                    <h3 style="font-size: 1.1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; margin-bottom: 20px; font-weight: 600;">2. アクセス解析ツールの使用</h3>
+                    <p style="color: var(--secondary-accent); font-size: 0.95rem; margin-bottom: 15px;">
+                        当サイトでは、Googleによるアクセス解析ツール「Googleアナリティクス（GA4）」を使用しています。データの収集のためにCookieを使用していますが、このデータは匿名で収集されており、個人を特定するものではありません。
+                    </p>
+                    <p style="color: var(--secondary-accent); font-size: 0.95rem;">
+                        この機能はCookieを無効にすることで拒否することが可能です。詳細は
+                        <a href="https://marketingplatform.google.com/about/analytics/terms/jp/" target="_blank" rel="noopener" style="color: var(--primary-accent); text-decoration: underline; text-underline-offset: 4px;">Googleアナリティクス利用規約</a> や
+                        <a href="https://policies.google.com/technologies/ads?hl=ja" target="_blank" rel="noopener" style="color: var(--primary-accent); text-decoration: underline; text-underline-offset: 4px;">Googleポリシーと規約</a> をご覧ください。
+                    </p>
+                </section>
+
+                <section>
+                    <h3 style="font-size: 1.1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; margin-bottom: 20px; font-weight: 600;">3. 免責事項</h3>
+                    <p style="color: var(--secondary-accent); font-size: 0.95rem;">
+                        当サイトからリンクやバナーなどによって他のサイトに移動された場合、移動先サイトで提供される情報、サービス等について一切の責任を負いません。当サイトのコンテンツについては、可能な限り正確な情報を掲載するよう努めておりますが、誤情報が入り込んだり、情報が古くなっていることもございます。
+                    </p>
+                </section>
+
+                <div style="margin-top: 60px; text-align: right; color: var(--secondary-accent); font-size: 0.8rem;">
+                    制定：2026年2月24日
+                </div>
+            </div>
         </div>
-    </div>
+    </main>
+
+    <footer>
+        &copy; 2026 114514 & Co. All Rights Reserved.
+    </footer>
 
     <script src="assets/js/main.js"></script>
 </body>

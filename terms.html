@@ -2,20 +2,71 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms | 114514 & Co.</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="container">
-        <h2 class="section-title">TERMS OF SERVICE</h2>
-        <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 10px;">
-            <h3>第1条（総則）</h3>
-            <p>本規約は、114514 & Co.が提供する全てのサービスにおける利用条件を定めるものです。利用者は、本アプリを起動した瞬間に本規約に「いいよ、こいよ」と同意したものとみなします。</p>
-            <h3>第2条（禁止事項）</h3>
-            <p>データの改ざん、逆コンパイル、および組織の名誉を毀損する行為を禁止します。発覚した場合、王道を往く厳しい処置を取る場合があります。</p>
+    <div id="ambient-light"></div>
+
+    <nav>
+        <a href="index.html" class="nav-logo">114514 & Co.</a>
+        <div class="menu-toggle" id="mobile-menu" onclick="mobileMenu()">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
         </div>
-        <a href="index.html" style="color:var(--neon-green); display:block; margin-top:20px;">← BACK TO TOP</a>
-    </div>
-    <script src="script.js"></script>
+        <div class="nav-links" id="nav-list">
+            <a href="news.html">NEWS</a>
+            <a href="games.html">GAMES</a>
+            <a href="gallery.html">GALLERY</a>
+            <a href="company.html">COMPANY</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h2 class="section-title reveal" style="font-size: clamp(2rem, 5vw, 3rem);">TERMS OF SERVICE</h2>
+
+        <div class="reveal" style="max-width: 800px; margin: 0 auto 100px;">
+            <div class="recruit-box" style="text-align: left; padding: 60px 50px; border-radius: 2px;">
+                
+                <section style="margin-bottom: 50px;">
+                    <h3 style="font-size: 1rem; letter-spacing: 0.2em; border-left: 3px solid var(--primary-accent); padding-left: 15px; margin-bottom: 25px; font-weight: 600;">第1条（総則）</h3>
+                    <p style="color: var(--secondary-accent); font-size: 0.9rem; line-height: 2;">
+                        本規約は、114514 & Co.（以下「当組織」）が提供する全てのサービスにおける利用条件を定めるものです。利用者は、本サービスにアクセスし、またはこれを利用した時点で、本規約の全ての条項に同意したものとみなされます。
+                    </p>
+                </section>
+
+                <section style="margin-bottom: 50px;">
+                    <h3 style="font-size: 1rem; letter-spacing: 0.2em; border-left: 3px solid var(--primary-accent); padding-left: 15px; margin-bottom: 25px; font-weight: 600;">第2条（禁止事項）</h3>
+                    <p style="color: var(--secondary-accent); font-size: 0.9rem; line-height: 2; margin-bottom: 15px;">
+                        利用者は、本サービスの利用にあたり、以下の行為を行ってはならないものとします。
+                    </p>
+                    <ul style="list-style: none; padding: 0; color: var(--secondary-accent); font-size: 0.9rem;">
+                        <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                            <span style="position: absolute; left: 0;">・</span>データの改ざん、逆コンパイル、または解析行為
+                        </li>
+                        <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                            <span style="position: absolute; left: 0;">・</span>当組織または第三者の知的財産権を侵害する行為
+                        </li>
+                        <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                            <span style="position: absolute; left: 0;">・</span>当組織の運営を妨げ、または名誉を毀損する行為
+                        </li>
+                    </ul>
+                    <p style="color: var(--secondary-accent); font-size: 0.9rem; margin-top: 15px;">
+                        これらの違反が確認された場合、当組織は「王道を往く」厳正な法的措置および利用停止措置を講じる権利を有します。
+                    </p>
+                </section>
+
+                <div style="margin-top: 80px; text-align: right;">
+                    <a href="index.html" class="btn" style="padding: 12px 30px; font-size: 0.7rem;">RETURN TO TOP</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 114514 & Co. All Rights Reserved.
+    </footer>
+
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

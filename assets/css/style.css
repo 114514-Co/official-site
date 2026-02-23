@@ -1,14 +1,14 @@
-/* --- 114514 & Co. Luxury Modern Gaming Design --- */
+/* --- 114514 & Co. Luxury Modern Unified Design --- */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+JP:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;800&family=Noto+Sans+JP:wght@300;500;700&display=swap');
 
 :root {
-    /* 研ぎ澄まされたカラーパレット */
-    --primary-accent: #ffffff;    /* 潔い白 */
-    --secondary-accent: #888888;  /* 上品なグレー */
-    --bg-deep: #000000;           /* 真っ黒 */
-    --bg-card: #111111;           /* わずかに明るい黒 */
-    --border-color: rgba(255, 255, 255, 0.1);
+    /* カラーパレット：徹底した無彩色 */
+    --primary-accent: #ffffff;    
+    --secondary-accent: #a0a0a0;  
+    --bg-deep: #000000;           
+    --bg-card: #080808;           
+    --border-color: rgba(255, 255, 255, 0.05);
     
     /* タイポグラフィ */
     --font-main: 'Inter', 'Noto Sans JP', sans-serif;
@@ -19,18 +19,19 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--bg-deep);
-    color: #ffffff;
+    color: var(--primary-accent);
     font-family: var(--font-main);
-    line-height: 1.6;
-    letter-spacing: 0.02em;
-    -webkit-font-smoothing: antialiased; /* 文字を滑らかに */
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
 }
 
-/* 圧倒的透明感のナビゲーション */
+/* Navigation: Apple的な透明感 */
 nav {
     width: 100%;
-    height: 80px;
-    background: rgba(0, 0, 0, 0.8);
+    height: 70px;
+    background: rgba(0, 0, 0, 0.85);
     backdrop-filter: saturate(180%) blur(20px);
     position: fixed;
     top: 0;
@@ -38,130 +39,196 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 8%;
+    padding: 0 5%;
     box-sizing: border-box;
     border-bottom: 1px solid var(--border-color);
 }
 
 .nav-logo {
     color: var(--primary-accent);
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 800;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.3em;
     text-decoration: none;
-    transition: opacity 0.3s;
-}
-
-.nav-logo:hover {
-    opacity: 0.7;
+    transition: 0.4s;
 }
 
 .nav-links a {
     color: var(--secondary-accent);
     text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 500;
-    margin-left: 40px;
-    transition: color 0.3s ease;
+    font-size: 0.75rem;
+    font-weight: 400;
+    margin-left: 30px;
+    transition: color 0.3s;
+    text-transform: uppercase;
 }
 
 .nav-links a:hover {
     color: var(--primary-accent);
 }
 
-/* タイポグラフィ：太さと余白で魅せる */
+/* Typography: タイトルの圧倒的存在感 */
 .section-title {
     text-align: center;
-    font-size: 5rem; /* 圧倒的なサイズ */
+    font-size: clamp(2.5rem, 8vw, 6rem);
     font-weight: 800;
-    margin: 150px 0 80px;
-    letter-spacing: -0.04em;
-    line-height: 1.1;
+    margin: 120px 0 60px;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    text-transform: uppercase;
 }
 
-/* カード：フラットだが奥行きのあるデザイン */
-.contact-section, .recruit-box, .game-card {
+/* Content Blocks */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.game-card, .recruit-box, .contact-section {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
-    padding: 60px;
-    margin-bottom: 40px;
-    border-radius: 12px;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s;
+    padding: 80px 40px;
+    margin-bottom: 60px;
+    border-radius: 4px;
+    text-align: center;
 }
 
-.game-card:hover {
-    transform: scale(1.02);
-    background: #161616;
-}
-
-/* ボタン：装飾を削ぎ落とした美しさ */
-.btn {
-    display: inline-block;
-    padding: 16px 48px;
-    background: var(--primary-accent);
-    color: #000;
-    font-weight: 700;
-    font-size: 0.9rem;
-    text-decoration: none;
-    border-radius: 100px; /* 完全な丸み */
-    transition: all 0.3s ease;
-}
-
-.btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
-}
-
-/* ギャラリー：ミニマルグリッド */
+/* Gallery: ミニマルな美術館スタイル */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2カラムでゆったり見せる */
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 40px;
     margin-bottom: 100px;
 }
 
 .gallery-item {
-    background: #111;
-    border-radius: 16px;
+    background: transparent;
+    border: none;
+}
+
+.img-container {
     overflow: hidden;
+    background: #0a0a0a;
     aspect-ratio: 16 / 9;
+    border: 1px solid var(--border-color);
+    transition: border 0.4s ease;
 }
 
 .gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.8s ease;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0.8;
+}
+
+.gallery-item:hover .img-container {
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 .gallery-item:hover img {
     transform: scale(1.05);
+    opacity: 1;
 }
 
-/* 検索窓：溶け込むデザイン */
-#search-input {
-    background: rgba(255, 255, 255, 0.08);
-    border: none;
-    border-radius: 8px;
-    padding: 10px 20px;
-    color: #fff;
+.gallery-caption {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.gallery-caption .id {
+    font-size: 0.7rem;
+    color: var(--secondary-accent);
+    font-weight: 200;
+}
+
+.gallery-caption .title {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+    color: var(--primary-accent);
+}
+
+/* Buttons: 最小限の装飾 */
+.btn {
+    display: inline-block;
+    padding: 18px 44px;
+    background: var(--primary-accent);
+    color: #000;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    letter-spacing: 0.2em;
+}
+
+.btn:hover {
+    background: #ccc;
+    transform: translateY(-2px);
+}
+
+/* 404 & Special Pages */
+.error-wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.error-code {
     font-size: 0.9rem;
-    width: 200px;
-    transition: width 0.4s ease;
+    color: var(--secondary-accent);
+    letter-spacing: 0.8em;
+    margin-bottom: 20px;
 }
 
-#search-input:focus {
-    width: 300px;
-    background: rgba(255, 255, 255, 0.15);
-    outline: none;
+.error-message {
+    font-size: clamp(2rem, 10vw, 4rem);
+    font-weight: 200;
+    margin-bottom: 40px;
 }
-/* --- Dynamic Visual Enhancements --- */
 
-/* スクロールアニメーション用のクラス（初期状態：透明で下に20px） */
+/* Ambient Visuals */
+#ambient-light {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+                rgba(255, 255, 255, 0.02) 0%, 
+                transparent 60%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Footer: 謙虚な配置 */
+footer {
+    padding: 100px 0 50px;
+    text-align: center;
+    font-size: 0.7rem;
+    color: #444;
+    border-top: 1px solid var(--border-color);
+    margin-top: 100px;
+}
+
+footer a {
+    color: #666;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Utilities */
 .reveal {
     opacity: 0;
-    transform: translateY(20px);
-    transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(30px);
+    transition: all 1.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.active {
@@ -169,22 +236,9 @@ nav {
     transform: translateY(0);
 }
 
-/* マウス追従ライティングの土台 */
-#ambient-light {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
-                rgba(255, 255, 255, 0.03) 0%, 
-                transparent 50%);
-    pointer-events: none; /* クリックを邪魔しない */
-    z-index: 1;
-}
-
-/* コンテンツがライティングより上に来るように調整 */
-nav, .container, footer {
-    position: relative;
-    z-index: 10;
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
 }

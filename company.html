@@ -4,35 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Company | 114514 & Co.</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <div id="ambient-light"></div>
+
     <nav>
         <a href="index.html" class="nav-logo">114514 & Co.</a>
-        <div class="nav-links">
-            <a href="index.html#games">GAMES</a>
-            <a href="company.html" style="color:#ffcc00;">COMPANY</a>
-            <a href="index.html#contact">CONTACT</a>
-            <a href="privacy.html">PRIVACY</a>
+        <div class="menu-toggle" id="mobile-menu" onclick="mobileMenu()">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </div>
+        <div class="nav-links" id="nav-list">
+            <a href="news.html">NEWS</a>
+            <a href="games.html">GAMES</a>
+            <a href="environment.html">ENV</a>
+            <a href="company.html" style="color: var(--primary-accent);">COMPANY</a>
         </div>
     </nav>
 
-    <div class="container" style="margin-top:60px;">
-        <h2 class="section-title">COMPANY INFO</h2>
-        <table class="info-table">
-            <tr><th>組織名</th><td>114514 & Co.</td></tr>
-            <tr><th>設立</th><td>2026年2月24日</td></tr>
-        </table>
+    <main class="container">
+        <h2 class="section-title reveal">CORPORATE</h2>
 
-        <div class="recruit-box">
-            <h3>RECRUITING</h3>
-            <p>共に王道を往く同志を募集中。</p>
+        <section class="reveal" style="max-width: 600px; margin: 0 auto 100px;">
+            <div style="border-top: 1px solid var(--border-color); padding-top: 40px;">
+                <dl style="display: grid; grid-template-columns: 100px 1fr; gap: 30px; margin-bottom: 30px;">
+                    <dt style="color: var(--secondary-accent); font-size: 0.8rem;">組織名</dt>
+                    <dd style="margin: 0; font-weight: 600;">114514 & Co.</dd>
+                </dl>
+                <dl style="display: grid; grid-template-columns: 100px 1fr; gap: 30px; margin-bottom: 30px;">
+                    <dt style="color: var(--secondary-accent); font-size: 0.8rem;">設立</dt>
+                    <dd style="margin: 0;">2026.02.24</dd>
+                </dl>
+                <dl style="display: grid; grid-template-columns: 100px 1fr; gap: 30px;">
+                    <dt style="color: var(--secondary-accent); font-size: 0.8rem;">事業内容</dt>
+                    <dd style="margin: 0;">王道を往く次世代ゲーム開発、デジタルコンテンツの企画・運営</dd>
+                </dl>
+            </div>
+        </section>
+
+        <section class="recruit-box reveal">
+            <h3 style="letter-spacing: 0.3em; font-weight: 200;">RECRUITING</h3>
+            <p style="margin: 30px 0; color: var(--secondary-accent);">
+                妥協のない最高品質を追い求める、王道を往く同志を募集中。
+            </p>
+            <a href="mailto:your-email@example.com" class="btn">JOIN THE TEAM</a>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2026 114514 & Co. All Rights Reserved.<br>
+        <div class="footer-links" style="margin-top: 20px;">
+            <a href="privacy.html">Privacy Policy</a> | 
+            <a href="terms.html">Terms</a> | 
+            <a href="tokushoho.html">Legal</a>
         </div>
-    </div>
-
-    <footer style="text-align:center; padding:40px; color:#666;">
-        &copy; 2026 114514 & Co.
     </footer>
-    <script src="script.js"></script>
+
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
