@@ -27,7 +27,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Navigation: Apple的な透明感 */
+/* --- Navigation: 統一レイアウト --- */
 nav {
     width: 100%;
     height: 70px;
@@ -35,6 +35,7 @@ nav {
     backdrop-filter: saturate(180%) blur(20px);
     position: fixed;
     top: 0;
+    left: 0;
     z-index: 1000;
     display: flex;
     justify-content: space-between;
@@ -53,38 +54,65 @@ nav {
     transition: 0.4s;
 }
 
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
 .nav-links a {
     color: var(--secondary-accent);
     text-decoration: none;
     font-size: 0.75rem;
     font-weight: 400;
-    margin-left: 30px;
+    margin-left: 35px;
     transition: color 0.3s;
     text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 .nav-links a:hover {
     color: var(--primary-accent);
 }
 
-/* Typography: タイトルの圧倒的存在感 */
+/* Mobile Toggle (通常時は非表示) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    height: 2px;
+    width: 100%;
+    background-color: var(--primary-accent);
+    transition: 0.3s;
+}
+
+/* --- Typography & Main Content --- */
+main, .container {
+    padding-top: 70px; /* navの高さ分確保 */
+}
+
 .section-title {
     text-align: center;
     font-size: clamp(2.5rem, 8vw, 6rem);
     font-weight: 800;
-    margin: 120px 0 60px;
+    margin: 100px 0 60px;
     letter-spacing: -0.05em;
     line-height: 1;
     text-transform: uppercase;
 }
 
-/* Content Blocks */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
+/* --- Content Blocks --- */
 .game-card, .recruit-box, .contact-section {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -94,17 +122,12 @@ nav {
     text-align: center;
 }
 
-/* Gallery: ミニマルな美術館スタイル */
+/* --- Gallery Layout --- */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 40px;
     margin-bottom: 100px;
-}
-
-.gallery-item {
-    background: transparent;
-    border: none;
 }
 
 .img-container {
@@ -123,36 +146,12 @@ nav {
     opacity: 0.8;
 }
 
-.gallery-item:hover .img-container {
-    border-color: rgba(255, 255, 255, 0.3);
-}
-
 .gallery-item:hover img {
     transform: scale(1.05);
     opacity: 1;
 }
 
-.gallery-caption {
-    margin-top: 15px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.gallery-caption .id {
-    font-size: 0.7rem;
-    color: var(--secondary-accent);
-    font-weight: 200;
-}
-
-.gallery-caption .title {
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    font-weight: 400;
-    color: var(--primary-accent);
-}
-
-/* Buttons: 最小限の装飾 */
+/* --- Interactive Elements --- */
 .btn {
     display: inline-block;
     padding: 18px 44px;
@@ -171,30 +170,7 @@ nav {
     transform: translateY(-2px);
 }
 
-/* 404 & Special Pages */
-.error-wrapper {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.error-code {
-    font-size: 0.9rem;
-    color: var(--secondary-accent);
-    letter-spacing: 0.8em;
-    margin-bottom: 20px;
-}
-
-.error-message {
-    font-size: clamp(2rem, 10vw, 4rem);
-    font-weight: 200;
-    margin-bottom: 40px;
-}
-
-/* Ambient Visuals */
+/* --- Visual Effects --- */
 #ambient-light {
     position: fixed;
     top: 0;
@@ -208,23 +184,6 @@ nav {
     z-index: 1;
 }
 
-/* Footer: 謙虚な配置 */
-footer {
-    padding: 100px 0 50px;
-    text-align: center;
-    font-size: 0.7rem;
-    color: #444;
-    border-top: 1px solid var(--border-color);
-    margin-top: 100px;
-}
-
-footer a {
-    color: #666;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-/* Utilities */
 .reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -236,9 +195,48 @@ footer a {
     transform: translateY(0);
 }
 
-/* Mobile Adjustments */
+/* --- Responsive Design --- */
 @media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none; /* JS実装に合わせて調整可能 */
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        padding: 40px 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        margin: 20px 0;
+        font-size: 1rem;
+    }
+
     .gallery-grid {
         grid-template-columns: 1fr;
     }
+
+    .section-title {
+        margin: 60px 0 40px;
+    }
+}
+
+/* --- Footer --- */
+footer {
+    padding: 100px 0 50px;
+    text-align: center;
+    font-size: 0.7rem;
+    color: #444;
+    border-top: 1px solid var(--border-color);
+    margin-top: 100px;
 }

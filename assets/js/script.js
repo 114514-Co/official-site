@@ -1,67 +1,111 @@
-/* assets/js/main.js */
+/* --- 114514 & Co. Luxury Modern Unified Script --- */
+
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('SYSTEM ONLINE: 114514-CO CONNECTED...');
-    initBackToTop();
+    console.log('SYSTEM ONLINE: 114514-CO UNIFIED ARCHITECTURE CONNECTED...');
+
+    // 1. 共通パーツの読み込み (Header / Footer)
+    loadComponent("common-header", "assets/inc/header.html");
+    loadComponent("common-footer", "assets/inc/footer.html");
+
+    // 2. マウス連動のアンビエントライト効果
+    initAmbientLight();
+
+    // 3. スクロール連動のアニメーション (Reveal)
+    initScrollReveal();
+
+    // 4. 隠しコマンド (Konami Command)
     initKonamiCommand();
 });
 
-// モバイルメニュー
-function mobileMenu() {
-    const menu = document.getElementById('mobile-menu');
-    const navList = document.getElementById('nav-list');
-    menu.classList.toggle('is-active');
-    navList.classList.toggle('active');
-    if(navList.classList.contains('active')) console.log("MOBILE ACCESS GRANTED...");
-}
+/**
+ * 共通パーツ読み込み関数
+ */
+async function loadComponent(id, file) {
+    const element = document.getElementById(id);
+    if (!element) return;
 
-// BGM制御
-let isPlaying = false;
-function toggleBGM() {
-    const bgm = document.getElementById('myBGM');
-    const btn = document.getElementById('bgm-control');
-    if (isPlaying) {
-        bgm.pause();
-        btn.innerText = '🔊 SYSTEM SOUND: OFF';
-        document.body.classList.remove('shaking');
-    } else {
-        bgm.play();
-        btn.innerText = '🔊 SYSTEM SOUND: ON (HYPER)';
-        document.body.classList.add('shaking');
-        isPlaying = true;
+    try {
+        const response = await fetch(file);
+        if (!response.ok) throw new Error(`Failed to load ${file}`);
+        const data = await response.text();
+        element.innerHTML = data;
+
+        // ヘッダー読み込み完了後、モバイルメニューのイベントを紐付け
+        if (id === 'common-header') initMobileMenu();
+    } catch (error) {
+        console.error('Component load error:', error);
     }
 }
 
-// モード切替
-function toggleMode() {
-    const body = document.body;
-    const btn = document.getElementById('mode-switch');
-    body.classList.toggle('overdrive-mode');
-    btn.innerText = body.classList.contains('overdrive-mode') ? 'MODE: OVERDRIVE' : 'MODE: NORMAL';
+/**
+ * モバイルメニュー制御
+ */
+function initMobileMenu() {
+    const menuToggle = document.getElementById('mobile-menu');
+    const navList = document.getElementById('nav-list');
+    
+    if (menuToggle && navList) {
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('is-active');
+            navList.classList.toggle('active');
+            // LuxuryなフェードインのためにBodyのスクロールを制御
+            document.body.style.overflow = navList.classList.contains('active') ? 'hidden' : '';
+        });
+    }
 }
 
-// 隠しコマンド
+/**
+ * アンビエントライト (マウス追従)
+ */
+function initAmbientLight() {
+    const light = document.getElementById('ambient-light');
+    if (!light) return;
+
+    window.addEventListener('mousemove', (e) => {
+        const x = (e.clientX / window.innerWidth) * 100;
+        const y = (e.clientY / window.innerHeight) * 100;
+        light.style.setProperty('--mouse-x', `${x}%`);
+        light.style.setProperty('--mouse-y', `${y}%`);
+    });
+}
+
+/**
+ * スクロール連動アニメーション
+ */
+function initScrollReveal() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}
+
+/**
+ * 隠しコマンド (Konami Command)
+ * Luxury Modernな演出として、反転ではなく「静かなフェードアウト」から移行
+ */
 function initKonamiCommand() {
     const secretCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
     let inputCode = [];
+
     window.addEventListener('keydown', (e) => {
         inputCode.push(e.key);
         inputCode = inputCode.slice(-secretCode.length);
+
         if (JSON.stringify(inputCode) === JSON.stringify(secretCode)) {
-            document.body.style.filter = "invert(100%)";
-            setTimeout(() => { window.location.href = 'secret.html'; }, 1000);
+            console.log("UNAUTHORIZED ACCESS DETECTED...");
+            document.body.style.transition = "opacity 2s ease";
+            document.body.style.opacity = "0";
+            setTimeout(() => {
+                window.location.href = 'secret.html';
+            }, 2000);
         }
     });
 }
 
-// Cookieバナー
-function acceptCookie() {
-    document.getElementById('cookie-banner').style.display = 'none';
-}
-
-// 戻るボタン
-function initBackToTop() {
-    const backToTop = document.getElementById('back-to-top');
-    window.addEventListener('scroll', () => {
-        window.scrollY > 300 ? backToTop.classList.add('show') : backToTop.classList.remove('show');
-    });
-}
+// 以前の BGM / Overdrive モードは、ブランドの品格を保つため
+// 必要に応じてボタンが配置されたページのみで動作するように調整可能です。

@@ -12,24 +12,9 @@
 <body>
     <div id="ambient-light"></div>
 
-    <nav>
-        <a href="index.html" class="nav-logo">114514 & Co.</a>
-        <div class="menu-toggle" id="mobile-menu" onclick="mobileMenu()">
-            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-        </div>
-        <div class="nav-links" id="nav-list">
-            <a href="news.html">NEWS</a>
-            <a href="games.html">GAMES</a>
-            <a href="gallery.html">GALLERY</a>
-            <a href="environment.html">ENV</a>
-            <a href="company.html">COMPANY</a>
-            <a href="javascript:void(0)" onclick="toggleMode()" id="mode-switch">MODE: NORMAL</a>
-        </div>
-        <div class="search-container">
-            <input type="text" id="search-input" placeholder="SYSTEM_QUERY..." onkeyup="siteSearch()">
-            <div id="search-results"></div>
-        </div>
-    </nav>
+<nav id="common-header"></nav>
+
+<script src="assets/js/loader.js"></script>
 
     <header>
         <h1>114514 & Co.</h1>
@@ -79,15 +64,7 @@
         </div>
     </aside>
 
-    <footer>
-        &copy; 2026 114514 & Co. All Rights Reserved.<br>
-        <div class="footer-links">
-            <a href="privacy.html">Privacy Policy</a> | 
-            <a href="terms.html">Terms of Service</a> | 
-            <a href="tokushoho.html">Legal Notice</a>
-        </div>
-        <p class="producer">Produced by Inm-Dev-Team</p>
-    </footer>
+<footer id="common-footer"></footer>
 
     <div id="cookie-banner">
         <p>当サイトではCookieを使用して品質を向上させています。同意して、どうぞ。</p>
