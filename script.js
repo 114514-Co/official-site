@@ -38,3 +38,34 @@ function siteSearch() {
 }
 
 // 以前作成したモバイルメニューやモード切替の関数もここに入れておくと楽です
+
+/* --- script.js --- */
+
+// 1. マウス追従ライティング
+window.addEventListener('mousemove', (e) => {
+    const x = (e.clientX / window.innerWidth) * 100;
+    const y = (e.clientY / window.innerHeight) * 100;
+    
+    document.documentElement.style.setProperty('--mouse-x', `${x}%`);
+    document.documentElement.style.setProperty('--mouse-y', `${y}%`);
+});
+
+// 2. スクロール・フェードイン
+function reveal() {
+    const reveals = document.querySelectorAll(".reveal");
+
+    reveals.forEach((element) => {
+        const windowHeight = window.innerHeight;
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150; // どのくらい見えたら発動するか
+
+        if (elementTop < windowHeight - elementVisible) {
+            element.classList.add("active");
+        }
+    });
+}
+
+window.addEventListener("scroll", reveal);
+
+// 初期読み込み時にも実行
+reveal();
