@@ -1,3 +1,22 @@
+/* --- style.css の冒頭をこれに書き換え --- */
+:root {
+    --neon-primary: #39ff14; /* デフォルトはグリーン */
+    --neon-secondary: #ff00ff;
+    --dark-bg: #050505;
+}
+
+/* 「OVERDRIVEモード（ピンク主役）」の定義 */
+body.overdrive-mode {
+    --neon-primary: #ff00ff;
+    --neon-secondary: #00ffff;
+}
+
+/* 既存の CSS 内の --neon-green を --neon-primary に置換してください */
+nav { border-bottom: 2px solid var(--neon-primary); box-shadow: 0 0 15px var(--neon-primary); }
+.nav-logo { color: var(--neon-primary); text-shadow: 0 0 10px var(--neon-primary); }
+.section-title { color: var(--neon-secondary); text-shadow: 5px 5px #000, 0 0 20px var(--neon-secondary); }
+/* ...他の部分も同様に ... */
+
 /* --- 114514 & Co. 極限・サイバーパンク仕様 --- */
 
 :root {
