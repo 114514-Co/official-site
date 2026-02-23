@@ -12,16 +12,20 @@
 <body onload="console.log('SYSTEM ONLINE: 114514-CO CONNECTED...')">
 <nav>
     <a href="index.html" class="nav-logo">114514 & Co.</a>
-<div class="nav-links">
-    <a href="company.html">COMPANY</a>
-    <a href="games.html">GAMES</a>
-    <a href="#gallery">GALLERY</a>
-    <a href="#philosophy">ABOUT</a>
-    <a href="#contact">CONTACT</a> <a href="privacy.html">PRIVACY</a>
-</div>
-    <a href="index.html" class="nav-logo">114514 & Co.</a>
-    <div class="nav-links">
-        <a href="javascript:void(0)" onclick="toggleMode()" id="mode-switch" style="border: 1px solid var(--neon-primary); padding: 2px 10px; font-size: 0.7rem;">MODE: NORMAL</a>
+    
+    <div class="menu-toggle" id="mobile-menu" onclick="mobileMenu()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <div class="nav-links" id="nav-list">
+        <a href="news.html">NEWS</a>
+        <a href="games.html">GAMES</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="environment.html">ENV</a>
+        <a href="company.html">COMPANY</a>
+        <a href="javascript:void(0)" onclick="toggleMode()" id="mode-switch">MODE: NORMAL</a>
     </div>
 </nav>
     <header>
