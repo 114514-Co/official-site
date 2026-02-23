@@ -7,6 +7,59 @@
     <meta name="description" content="114514 & Co. 公式サイト。「王道を往く」をコンセプトに、妥協のない最高品質のゲームをドバドバ展開中。最新作の情報を今すぐチェック。入って、どうぞ。">
     <title>114514 & Co. Official | 王道を往く、次世代のゲーム開発</title>
     <style>
+        /* ナビゲーションバー：王道を往く固定デザイン */
+nav {
+    width: 100%;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.9); /* 少し透けさせて高級感を出すゾ */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #333;
+    backdrop-filter: blur(5px); /* 背景をボカす、やりますねぇ！なエフェクト */
+}
+
+.nav-logo {
+    color: #ffcc00;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffcc00;
+}
+
+/* ナビゲーションが固定されるので、ヘッダーの余白を調整 */
+header {
+    padding-top: 60px;
+}
+
+/* レスポンシブ調整 */
+@media (max-width: 600px) {
+    nav { padding: 0 20px; }
+    .nav-links { gap: 15px; }
+    .nav-links a { font-size: 0.8rem; }
+}
         /* 基本設定：妥協なんて必要ねぇんだよ */
         body {
             margin: 0;
@@ -118,7 +171,15 @@
     </style>
 </head>
 <body>
-
+<nav>
+    <a href="index.html" class="nav-logo">114514 & Co.</a>
+    <div class="nav-links">
+        <a href="#games">GAMES</a>
+        <a href="#gallery">GALLERY</a>
+        <a href="#philosophy">ABOUT</a>
+        <a href="privacy.html">PRIVACY</a>
+    </div>
+</nav>
     <header>
         <h1>114514 & Co.</h1>
         <p class="tagline">王道を往く、次世代のゲーム体験を。「いいよ、こいよ」</p>
