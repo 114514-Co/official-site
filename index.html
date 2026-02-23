@@ -7,6 +7,35 @@
     <meta name="description" content="114514 & Co. 公式サイト。「王道を往く」をコンセプトに、妥協のない最高品質のゲームをドバドバ展開中。最新作の情報を今すぐチェック。入って、どうぞ。">
     <title>114514 & Co. Official | 王道を往く、次世代のゲーム開発</title>
     <style>
+        /* お問い合わせセクション */
+.contact-section {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 15px;
+    margin-top: 100px;
+}
+
+.contact-email {
+    display: block;
+    font-size: 1.5rem;
+    color: #ffcc00;
+    text-decoration: none;
+    margin: 20px 0;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.contact-email:hover {
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.contact-note {
+    font-size: 0.8rem;
+    color: #888;
+}
         /* Cookieポップアップ：公式の圧 */
 #cookie-banner {
     position: fixed;
@@ -230,12 +259,12 @@ header {
 <body>
 <nav>
     <a href="index.html" class="nav-logo">114514 & Co.</a>
-    <div class="nav-links">
-        <a href="#games">GAMES</a>
-        <a href="#gallery">GALLERY</a>
-        <a href="#philosophy">ABOUT</a>
-        <a href="privacy.html">PRIVACY</a>
-    </div>
+<div class="nav-links">
+    <a href="#games">GAMES</a>
+    <a href="#gallery">GALLERY</a>
+    <a href="#philosophy">ABOUT</a>
+    <a href="#contact">CONTACT</a> <a href="privacy.html">PRIVACY</a>
+</div>
 </nav>
     <header>
         <h1>114514 & Co.</h1>
@@ -272,16 +301,25 @@ header {
             </div>
         </section>
 
-        <section style="text-align: center; margin-top: 100px;">
+<section id="philosophy" style="text-align: center; margin-top: 100px;">
             <h2 class="section-title">PHILOSOPHY</h2>
             <p style="font-size: 1.2rem; font-style: italic;">
                 "面白いものを、ドバドバ出して、いく。それだけだ。"
             </p>
             <p>114514 & Co. は、ユーザーに「やりますねぇ！」と言わせるためだけに、日夜コードを書き続ける迫真のデベロッパー集団です。</p>
         </section>
-    </div>
 
-    <footer>
+        <section id="contact" class="contact-section">
+            <h2 class="section-title" style="border:none; margin-bottom: 20px;">CONTACT</h2>
+            <p>アプリの不具合報告、改善要望、その他「いいよ、こいよ」という熱いメッセージはこちらまで。</p>
+            
+            <a href="mailto:your-email@example.com?subject=114514&Co.へのお問い合わせ" class="contact-email">
+                📧 MAIL TO US
+            </a>
+
+            <p class="contact-note">※返信にはお時間をいただく場合があります。妥協なんて必要ねぇんだよ！という熱意あるご連絡をお待ちしております。</p>
+        </section>
+        </div> <footer>
         &copy; 2026 114514 & Co. All Rights Reserved.<br>
         Produced by Inm-Dev-Team
     </footer>
