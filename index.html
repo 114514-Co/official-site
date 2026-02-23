@@ -2,13 +2,151 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>114514 & Co. Official</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>114514 & Co. Official | 王道を往く、次世代のゲーム開発</title>
+    <style>
+        /* 基本設定：妥協なんて必要ねぇんだよ */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0d0d0d;
+            color: #e0e0e0;
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* ヘッダー：公式の風格 */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); /* サイバーな背景イメージ */
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            border-bottom: 2px solid #ffcc00;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin: 0;
+            letter-spacing: 0.5rem;
+            color: #ffcc00;
+            text-shadow: 0 0 20px rgba(255, 204, 0, 0.5);
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* コンテンツセクション */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+            margin-bottom: 50px;
+            color: #ffcc00;
+        }
+
+        /* ゲーム紹介カード */
+        .game-card {
+            background: #1a1a1a;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease;
+            margin-bottom: 40px;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            border: 1px solid #ffcc00;
+        }
+
+        .game-info {
+            padding: 30px;
+        }
+
+        .game-info h3 {
+            font-size: 1.8rem;
+            margin-top: 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ffcc00;
+            color: #000;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #fff;
+        }
+
+        /* フッター */
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 40px 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* レスポンシブ対応 */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+            .tagline { font-size: 1rem; }
+        }
+    </style>
 </head>
-<body style="background: #111; color: white; text-align: center; font-family: sans-serif; padding-top: 100px;">
-    <h1>114514 & Co. 公式サイト</h1>
-    <p>「いいよ、こいよ」。最高のゲーム体験を、今ここに。</p>
-    <p style="color: #ff0;">現在、鋭意開発中（妥協なんて必要ねぇんだよ！）</p>
-    <br>
-    <p>やりますねぇ！ 👍</p>
+<body>
+
+    <header>
+        <h1>114514 & Co.</h1>
+        <p class="tagline">王道を往く、次世代のゲーム体験を。「いいよ、こいよ」</p>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2 class="section-title">LATEST PROJECT</h2>
+            <div class="game-card">
+                <div class="game-info">
+                    <h3>新作ゲーム（仮称）</h3>
+                    <p>開発者が「ああ〜いいっすね〜」と自画自賛する、渾身のタイトルがついに登場。妥協なんて必要ねぇんだよ！という気概で作り込まれた圧倒的グラフィックと操作性を、君のスマホで存分に味わってくれ。</p>
+                    <a href="#" class="btn">入って、どうぞ（Google Playへ）</a>
+                </div>
+            </div>
+        </section>
+
+        <section style="text-align: center; margin-top: 100px;">
+            <h2 class="section-title">PHILOSOPHY</h2>
+            <p style="font-size: 1.2rem; font-style: italic;">
+                "面白いものを、ドバドバ出して、いく。それだけだ。"
+            </p>
+            <p>114514 & Co. は、ユーザーに「やりますねぇ！」と言わせるためだけに、日夜コードを書き続ける迫真のデベロッパー集団です。</p>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2026 114514 & Co. All Rights Reserved.<br>
+        Produced by Inm-Dev-Team
+    </footer>
+
 </body>
 </html>
