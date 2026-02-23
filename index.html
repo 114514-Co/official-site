@@ -183,6 +183,19 @@
             }, 1000);
         }
     });
+        function mobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const navList = document.getElementById('nav-list');
+
+    menu.classList.toggle('is-active');
+    navList.classList.toggle('active');
+
+    // 開いた時にコンソールにログを出す（エグい演出）
+    if(navList.classList.contains('active')) {
+        console.log("MOBILE ACCESS GRANTED. OVERRIDE MENU...");
+    }
+}
 </script>
+    
 </body>
 </html>
