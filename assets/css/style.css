@@ -192,7 +192,6 @@ nav {
 .visual-card {
   aspect-ratio: 16 / 9;
 }
-
 .project-panel {
   width: 100%;
   min-height: 450px;
@@ -264,7 +263,7 @@ nav {
   letter-spacing: 0.2em;
 }
 
-/* --- Project Details Animation --- */
+/* --- Project Details & New Elements --- */
 .details-content {
   max-height: 0;
   overflow: hidden;
@@ -276,7 +275,7 @@ nav {
 }
 
 .details-content.active {
-  max-height: 600px;
+  max-height: 1200px;
   opacity: 1;
   margin-top: 30px;
 }
@@ -284,6 +283,67 @@ nav {
 .details-inner {
   padding-top: 25px;
   border-top: 1px solid var(--border-color);
+}
+
+.development-status {
+  margin-bottom: 30px;
+}
+.status-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  font-weight: 800;
+}
+
+.status-value {
+  color: var(--status-on);
+  text-shadow: 0 0 10px var(--status-on);
+}
+
+.progress-track {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(
+    90deg,
+    var(--secondary-accent),
+    var(--primary-accent)
+  );
+  box-shadow: 0 0 15px var(--primary-accent);
+  position: relative;
+  transition: width 2s var(--ease-out-expo);
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  margin: 30px 0;
+  border: 1px solid var(--border-color);
+  background: #000;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: grayscale(0.4) contrast(1.1);
+  transition: 0.5s;
+}
+
+.video-container:hover iframe {
+  filter: grayscale(0) contrast(1);
 }
 
 .specs-grid {
@@ -298,13 +358,11 @@ nav {
   letter-spacing: 0.1em;
   color: var(--primary-accent);
 }
-
 .spec-item span {
   color: var(--secondary-accent);
   margin-right: 8px;
   font-weight: 200;
 }
-
 .details-text {
   font-size: 0.85rem;
   line-height: 2;
@@ -334,7 +392,6 @@ footer {
   border-top: 1px solid var(--border-color);
   margin-top: 150px;
 }
-
 .footer-container {
   display: flex;
   flex-direction: column;
@@ -363,11 +420,23 @@ footer {
   height: 100%;
 }
 
+/* サウンドコントロール全体の強制横並び設定 */
 .system-sound-control {
   display: flex;
   align-items: center;
-  gap: 15px;
+  justify-content: center;
+  gap: 8px; /* ラベルとステータスの間隔 */
+  white-space: nowrap; /* 親要素ごと改行を禁止 */
+  flex-wrap: nowrap; /* 折り返しを禁止 */
 }
+
+.sound-label {
+  font-size: 0.75rem;
+  font-weight: 200;
+  color: var(--secondary-accent);
+  letter-spacing: 0.1em;
+}
+
 .sound-status {
   font-size: 0.75rem;
   font-weight: 700;
@@ -375,16 +444,21 @@ footer {
   color: var(--secondary-accent);
   display: flex;
   align-items: center;
+  min-width: 100px; /* 文字切り替え時のガタつき防止 */
 }
+
 .sound-status::before {
   content: "";
+  display: inline-block;
   width: 8px;
   height: 8px;
   background: var(--status-on);
   border-radius: 50%;
   margin-right: 12px;
   box-shadow: 0 0 10px var(--status-on);
+  flex-shrink: 0; /* ドットが潰れるのを防ぐ */
 }
+
 .sound-status.disabled::before {
   background: var(--status-off);
   box-shadow: 0 0 10px var(--status-off);
@@ -404,7 +478,6 @@ footer {
 .footer-links a:hover {
   color: var(--primary-accent) !important;
 }
-
 .copyright {
   font-size: 0.65rem;
   color: var(--secondary-accent);
@@ -428,19 +501,6 @@ footer {
 .cookie-wrapper.show {
   transform: translateY(0);
 }
-.cookie-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 5%;
-}
-.cookie-content p {
-  font-size: 0.65rem;
-  color: var(--secondary-accent);
-  margin: 0;
-}
 .cookie-btn {
   background: #fff;
   border: none;
@@ -458,12 +518,12 @@ footer {
   font-size: 0.6rem;
   letter-spacing: 0.4em;
   color: var(--secondary-accent);
-  text-decoration: none !important;
   transform: rotate(-90deg);
   transform-origin: right bottom;
   transition: 0.3s;
   z-index: 100;
   opacity: 0.5;
+  text-decoration: none !important;
 }
 #back-to-top:hover {
   opacity: 1;
@@ -499,8 +559,10 @@ footer {
     background: rgba(0, 0, 0, 0.95);
   }
   .footer-links {
-    flex-direction: column;
-    gap: 15px;
+    flex-direction: row; /* スマホでも横並びを維持 */
+    flex-wrap: wrap; /* 多すぎる場合は折り返しを許可 */
+    justify-content: center;
+    gap: 10px 20px;
   }
   .cookie-content {
     flex-direction: column;
@@ -508,6 +570,11 @@ footer {
     text-align: center;
   }
   .details-content.active {
-    max-height: 1000px;
-  } /* スマホでは縦に伸びるため */
+    max-height: 1600px;
+  }
+
+  /* スマホでのサウンドコントロール微調整 */
+  .system-sound-control {
+    transform: scale(0.9);
+  }
 }

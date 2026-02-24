@@ -22,15 +22,17 @@ document.addEventListener("DOMContentLoaded", () => {
   initAmbientLight();
   initScrollReveal();
   initKonamiCommand();
-  initProjectToggle(); // 追加：プロジェクト展開制御
+  initProjectToggle(); // プロジェクト展開制御（進捗バーアニメーション含む）
 });
 
 /**
  * プロジェクト情報の展開制御 (LATEST PROJECT用)
+ * 進捗バーのアニメーション連動
  */
 function initProjectToggle() {
   const toggleBtn = document.getElementById("project-toggle");
   const details = document.getElementById("project-details");
+  const progressFill = document.querySelector(".progress-fill");
 
   if (toggleBtn && details) {
     toggleBtn.addEventListener("click", function (e) {
@@ -43,7 +45,20 @@ function initProjectToggle() {
       // テキストの切り替え
       this.textContent = isActive ? "CLOSE DETAILS" : "DISCOVER MORE";
 
-      // 展開時に視認性を上げるための微スクロール（必要に応じて）
+      // --- 進捗バーのアニメーション処理 ---
+      if (progressFill) {
+        if (isActive) {
+          // 展開されたら 81% まで伸ばす
+          setTimeout(() => {
+            progressFill.style.width = "81.0%";
+          }, 400); // 展開アニメーションが始まってから少し遅らせる
+        } else {
+          // 閉じたら 0% に戻す（次回の展開時に再度アニメーションさせるため）
+          progressFill.style.width = "0%";
+        }
+      }
+
+      // 展開時に視認性を上げるための微スクロール
       if (isActive) {
         setTimeout(() => {
           const yOffset = -100; // ヘッダー分などを考慮
