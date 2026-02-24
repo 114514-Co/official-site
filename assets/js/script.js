@@ -1,8 +1,12 @@
 /* --- 114514 & Co. Luxury Modern Unified Script --- */
 
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("SYSTEM ONLINE: 114514-CO UNIFIED ARCHITECTURE CONNECTED..."); // 1. 共通パーツの読み込みと初期化
+  console.log("SYSTEM ONLINE: 114514-CO UNIFIED ARCHITECTURE CONNECTED...");
 
+  // --- ローディングシステムの即時起動 ---
+  initUnifiedLoader();
+
+  // 1. 共通パーツの読み込みと初期化
   loadComponent("common-header", "assets/inc/header.inc", () => {
     initMobileMenu();
     initSearch();
@@ -12,12 +16,70 @@ document.addEventListener("DOMContentLoaded", () => {
     initBackToTop();
     initCookieBanner();
     initSoundToggle(); // システムサウンドの切り替え・再生機能
-  }); // 2. 即時実行可能なエフェクト
+  });
 
+  // 2. 即時実行可能なエフェクト
   initAmbientLight();
   initScrollReveal();
   initKonamiCommand();
 });
+
+/**
+ * 統合ローディングシステム
+ * HTMLを自動生成し、カウントアップ演出を実行
+ */
+function initUnifiedLoader() {
+  // すでに存在しない場合のみ生成（二重実行防止）
+  if (document.getElementById("loading-screen")) return;
+
+  const loadingHTML = `
+    <div id="loading-screen">
+        <div class="loader-content">
+            <div class="loader-logo">114514 & Co.</div>
+            <div class="loader-bar-container">
+                <div class="loader-bar" id="loader-bar"></div>
+            </div>
+            <div class="loader-percentage" id="loader-text">0%</div>
+        </div>
+    </div>
+  `;
+  document.body.insertAdjacentHTML("afterbegin", loadingHTML);
+
+  const loaderBar = document.getElementById("loader-bar");
+  const loaderText = document.getElementById("loader-text");
+  let progress = 0;
+
+  // ローディング演出の実行
+  const progressInterval = setInterval(() => {
+    // 擬似プログレス増加
+    progress += Math.floor(Math.random() * 12) + 3;
+
+    if (progress >= 100) {
+      progress = 100;
+      clearInterval(progressInterval);
+
+      // 完了時の演出（window.onloadを待たずに100%になったら終了）
+      setTimeout(() => {
+        document.body.classList.add("loaded");
+        // アニメーション後にDOMから非表示にする（クリックイベント阻害防止）
+        setTimeout(() => {
+          document.getElementById("loading-screen").style.display = "none";
+        }, 800);
+      }, 500);
+    }
+
+    if (loaderBar) loaderBar.style.width = `${progress}%`;
+    if (loaderText) loaderText.innerText = `${progress}%`;
+  }, 60);
+
+  // 念のため、全ての外部リソース（重い画像等）が読み終わったら強制終了させる設定
+  window.addEventListener("load", () => {
+    if (progress < 100) {
+      progress = 100;
+      // 上記のsetInterval側で完了処理が行われる
+    }
+  });
+}
 
 /**
  * 共通パーツ読み込み関数
@@ -43,7 +105,7 @@ async function loadComponent(id, file, callback) {
  */
 function initSoundToggle() {
   const statusBtn = document.getElementById("sound-status");
-  const bgm = document.getElementById("myBGM"); // クリックSEの読み込み（パスは環境に合わせて調整してください）
+  const bgm = document.getElementById("myBGM");
 
   const clickSE = new Audio("assets/audio/click.mp3");
   clickSE.volume = 0.4;
@@ -51,30 +113,24 @@ function initSoundToggle() {
   if (!statusBtn) return;
 
   statusBtn.addEventListener("click", () => {
-    // 現在の状態を確認
     const isCurrentlyEnabled = !statusBtn.classList.contains("disabled");
 
     if (isCurrentlyEnabled) {
-      // --- DISABLE（停止処理） ---
       statusBtn.textContent = "DISABLED";
       statusBtn.classList.add("disabled");
       if (bgm) bgm.pause();
-      console.log("SYSTEM SOUND: DEACTIVATED");
     } else {
-      // --- ENABLE（起動処理） ---
       statusBtn.textContent = "ENABLED";
-      statusBtn.classList.remove("disabled"); // BGM再生
+      statusBtn.classList.remove("disabled");
 
       if (bgm) {
         bgm.play().catch(() => {
-          console.log("Playback blocked by browser. Interaction required.");
+          console.log("Playback blocked by browser.");
         });
-      } // クリックSE再生（ENABLEDになった瞬間のみ鳴らす演出）
+      }
 
       clickSE.currentTime = 0;
-      clickSE.play().catch(() => {}); // エラー無視（ファイル不在時など）
-
-      console.log("SYSTEM SOUND: ACTIVATED");
+      clickSE.play().catch(() => {});
     }
   });
 }

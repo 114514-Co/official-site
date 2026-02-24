@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | 114514 & Co.</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <style>
+      /* コンタクトページ専用スタイル */
+      .contact-form-container {
+        max-width: 700px;
+        margin: 60px auto 120px;
+      }
+
+      .form-group {
+        margin-bottom: 40px;
+        position: relative;
+      }
+
+      .form-label {
+        display: block;
+        font-size: 0.7rem;
+        letter-spacing: 0.3em;
+        color: var(--secondary-accent);
+        text-transform: uppercase;
+        margin-bottom: 12px;
+        transition: color 0.3s;
+      }
+
+      .form-control {
+        width: 100%;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid var(--border-color);
+        color: var(--primary-accent);
+        padding: 10px 0;
+        font-size: 1rem;
+        font-family: var(--font-main);
+        transition: border-color 0.4s var(--ease-out-expo);
+        box-sizing: border-box;
+        border-radius: 0;
+      }
+
+      /* プルダウンの選択肢（iOS/Chrome対策） */
+      select.form-control option {
+        background-color: #111; /* 背景を黒に固定 */
+        color: #fff;
+      }
+
+      /* プルダウンの矢印アイコンを自作 */
+      .select-wrapper {
+        position: relative;
+      }
+
+      .select-wrapper::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 15px;
+        width: 8px;
+        height: 8px;
+        border-right: 1px solid var(--secondary-accent);
+        border-bottom: 1px solid var(--secondary-accent);
+        transform: rotate(45deg);
+        pointer-events: none;
+      }
+
+      .form-control:focus {
+        outline: none;
+        border-bottom-color: var(--primary-accent);
+      }
+
+      .form-group:focus-within .form-label {
+        color: var(--primary-accent);
+      }
+
+      textarea.form-control {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      .submit-area {
+        text-align: center;
+        margin-top: 60px;
+      }
+
+      .submit-btn {
+        background: transparent;
+        border: 1px solid var(--primary-accent);
+        color: var(--primary-accent);
+        padding: 20px 60px;
+        font-size: 0.8rem;
+        font-weight: 800;
+        letter-spacing: 0.4em;
+        cursor: pointer;
+        transition: all 0.5s var(--ease-out-expo);
+        text-transform: uppercase;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .submit-btn:hover {
+        background: var(--primary-accent);
+        color: #000;
+        letter-spacing: 0.6em;
+        padding-left: 70px;
+        padding-right: 50px;
+      }
+
+      .contact-note {
+        text-align: center;
+        font-size: 0.75rem;
+        color: var(--secondary-accent);
+        margin-top: 40px;
+        line-height: 2;
+      }
+
+      @media (max-width: 768px) {
+        .contact-form-container {
+          padding: 0 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="ambient-light"></div>
+    <nav id="common-header"></nav>
+
+    <main class="container">
+      <h2 class="section-title reveal">CONTACT</h2>
+
+      <div class="contact-form-container reveal">
+        <form id="contact-form">
+          <div class="form-group">
+            <label class="form-label">Full Name</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="氏名を入力してください"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input
+              type="email"
+              class="form-control"
+              placeholder="example@114514.co.jp"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Subject</label>
+            <div class="select-wrapper">
+              <select
+                class="form-control"
+                required
+                style="appearance: none; cursor: pointer"
+              >
+                <option value="" disabled selected>
+                  お問い合わせ内容を選択してください
+                </option>
+                <option value="project">新規プロジェクトのご相談</option>
+                <option value="recruitment">採用について</option>
+                <option value="media">メディア・取材依頼</option>
+                <option value="other">その他</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Message</label>
+            <textarea
+              class="form-control"
+              placeholder="詳細をご記入ください"
+              required
+            ></textarea>
+          </div>
+
+          <div class="submit-area">
+            <button type="submit" class="submit-btn">Send Message</button>
+            <p class="contact-note">
+              ※通常、3営業日以内に担当者よりご連絡いたします。<br />
+              お急ぎの場合は直接 info@114514-co.com までお送りください。
+            </p>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <footer id="common-footer"></footer>
+
+    <script src="assets/js/script.js"></script>
+    <script>
+      document
+        .getElementById("contact-form")
+        ?.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const btn = e.target.querySelector(".submit-btn");
+          btn.innerText = "TRANSMITTING...";
+          btn.style.opacity = "0.5";
+          btn.style.pointerEvents = "none";
+
+          setTimeout(() => {
+            alert(
+              "メッセージが送信されました。システムへのアクセスを承認しました。",
+            );
+            window.location.reload();
+          }, 2000);
+        });
+    </script>
+  </body>
+</html>
