@@ -6,14 +6,13 @@
     <title>Gallery | 114514 & Co.</title>
     <link rel="stylesheet" href="assets/css/style.css" />
     <style>
-      /* ギャラリー専用スタイル */
+      /* ギャラリー専用スタイル（既存維持） */
       .gallery-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
         gap: 40px;
         padding-bottom: 100px;
       }
-
       .gallery-item {
         cursor: pointer;
         position: relative;
@@ -22,12 +21,10 @@
         border: 1px solid var(--border-color);
         transition: transform 0.4s var(--ease-out-expo);
       }
-
       .gallery-item:hover {
         transform: translateY(-10px);
         border-color: var(--primary-accent);
       }
-
       .img-container {
         width: 100%;
         aspect-ratio: 16/9;
@@ -35,7 +32,6 @@
         position: relative;
         background: #000;
       }
-
       .img-container img,
       .img-container video {
         width: 100%;
@@ -46,13 +42,11 @@
           filter 0.6s ease;
         filter: grayscale(0.5) brightness(0.8);
       }
-
       .gallery-item:hover .img-container img,
       .gallery-item:hover .img-container video {
         transform: scale(1.05);
         filter: grayscale(0) brightness(1);
       }
-
       .gallery-caption {
         padding: 20px;
         display: flex;
@@ -60,7 +54,6 @@
         gap: 15px;
         background: #000;
       }
-
       .gallery-caption .id {
         font-size: 0.6rem;
         color: var(--primary-accent);
@@ -68,13 +61,11 @@
         border: 1px solid var(--primary-accent);
         padding: 2px 6px;
       }
-
       .gallery-caption .title {
         font-size: 0.75rem;
         letter-spacing: 0.2em;
         color: #fff;
       }
-
       .video-badge {
         position: absolute;
         top: 15px;
@@ -83,19 +74,16 @@
         backdrop-filter: blur(5px);
         padding: 5px 10px;
         font-size: 0.6rem;
-        letter-spacing: 0.1em;
         color: #fff;
         border: 1px solid rgba(255, 255, 255, 0.2);
         z-index: 2;
       }
-
       @media (max-width: 768px) {
         .gallery-grid {
           grid-template-columns: 1fr;
           gap: 20px;
         }
       }
-
       #lightbox {
         position: fixed;
         inset: 0;
@@ -106,14 +94,12 @@
         justify-content: center;
         cursor: zoom-out;
       }
-
       #lightbox-content {
         width: 90%;
         max-width: 1200px;
         display: flex;
         justify-content: center;
       }
-
       #lightbox img,
       #lightbox video {
         max-width: 100%;
@@ -144,27 +130,24 @@
       <div class="gallery-grid">
         <div class="gallery-item reveal" onclick="openLightbox(this)">
           <div class="img-container">
-            <span class="video-badge">MOTION</span>
-            <video
+            <span class="video-badge">MOTION</span
+            ><video
               src="https://cdn.pixabay.com/video/2020/09/20/50534-462319934_large.mp4"
               muted
               loop
               autoplay
               playsinline
-              poster="https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?auto=format&fit=crop&w=800&q=80"
             ></video>
           </div>
           <div class="gallery-caption">
-            <span class="id">01</span>
-            <span class="title">PROJECT INM TRAILER CLIP</span>
+            <span class="id">01</span
+            ><span class="title">PROJECT INM TRAILER</span>
           </div>
         </div>
-
         <div class="gallery-item reveal" onclick="openLightbox(this)">
           <div class="img-container">
             <img
-              src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&w=800&q=80"
-              alt="Concept Art"
+              src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?q=80&w=800"
             />
           </div>
           <div class="gallery-caption">
@@ -172,12 +155,10 @@
             ><span class="title">DISTRICT CONCEPT ART</span>
           </div>
         </div>
-
         <div class="gallery-item reveal" onclick="openLightbox(this)">
           <div class="img-container">
             <img
-              src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80"
-              alt="Core Engine"
+              src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800"
             />
           </div>
           <div class="gallery-caption">
@@ -185,12 +166,10 @@
             ><span class="title">CORE ENGINE ARCHIVE</span>
           </div>
         </div>
-
         <div class="gallery-item reveal" onclick="openLightbox(this)">
           <div class="img-container">
             <img
-              src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=800&q=80"
-              alt="Design Lab"
+              src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=800"
             />
           </div>
           <div class="gallery-caption">
@@ -198,12 +177,10 @@
             ><span class="title">CREATIVE DESIGN LAB</span>
           </div>
         </div>
-
         <div class="gallery-item reveal" onclick="openLightbox(this)">
           <div class="img-container">
             <img
-              src="https://images.unsplash.com/photo-1555680202-c86f0e12f086?auto=format&fit=crop&w=800&q=80"
-              alt="Night City"
+              src="https://images.unsplash.com/photo-1514565131-fce0801e5785?q=80&w=800"
             />
           </div>
           <div class="gallery-caption">
@@ -211,22 +188,417 @@
             ><span class="title">NEO CITY NIGHT-VIEW</span>
           </div>
         </div>
-
         <div class="gallery-item reveal" onclick="openLightbox(this)">
           <div class="img-container">
-            <span class="video-badge">MOTION</span>
-            <video
+            <span class="video-badge">MOTION</span
+            ><video
               src="https://cdn.pixabay.com/video/2021/09/01/87103-595393160_large.mp4"
               muted
               loop
               autoplay
               playsinline
-              poster="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80"
             ></video>
           </div>
           <div class="gallery-caption">
             <span class="id">06</span
             ><span class="title">AMBIENT FLOW TEST</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <div class="img-container">
+            <img
+              src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800"
+            />
+          </div>
+          <div class="gallery-caption">
+            <span class="id">07</span
+            ><span class="title">STRUCTURAL DATA UNIT</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <div class="img-container">
+            <img
+              src="https://images.unsplash.com/photo-1451187534959-42563271158d?q=80&w=800"
+            />
+          </div>
+          <div class="gallery-caption">
+            <span class="id">08</span><span class="title">GLOBAL NETWORK</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <div class="img-container">
+            <span class="video-badge">MOTION</span
+            ><video
+              src="https://cdn.pixabay.com/video/2020/11/03/54313-469772186_large.mp4"
+              muted
+              loop
+              autoplay
+              playsinline
+            ></video>
+          </div>
+          <div class="gallery-caption">
+            <span class="id">09</span><span class="title">DATA VISUALIZER</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <div class="img-container">
+            <img
+              src="https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=800"
+            />
+          </div>
+          <div class="gallery-caption">
+            <span class="id">10</span><span class="title">VOID MONOLITH</span>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <div class="img-container">
+            <img
+              src="https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?q=80&w=800"
+            />
+          </div>
+          <div class="gallery-caption">
+            <span class="id">11</span
+            ><span class="title">BATTLEGROUND SKETCH</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <div class="img-container">
+            <img
+              src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800"
+            />
+          </div>
+          <div class="gallery-caption">
+            <span class="id">12</span
+            ><span class="title">CYBER LAB INTERIOR</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <div class="img-container">
+            <span class="video-badge">MOTION</span
+            ><video
+              src="https://cdn.pixabay.com/video/2020/04/14/36554-411326442_large.mp4"
+              muted
+              loop
+              autoplay
+              playsinline
+            ></video>
+          </div>
+          <div class="gallery-caption">
+            <span class="id">13</span><span class="title">PARTICLE SYSTEM</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <div class="img-container">
+            <img
+              src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=800"
+            />
+          </div>
+          <div class="gallery-caption">
+            <span class="id">14</span><span class="title">ROBOTIC RIGGING</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <div class="img-container">
+            <img
+              src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=800"
+            />
+          </div>
+          <div class="gallery-caption">
+            <span class="id">15</span><span class="title">HOLOGRAPHIC UI</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <div class="img-container">
+            <img
+              src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800"
+            />
+          </div>
+          <div class="gallery-caption">
+            <span class="id">16</span><span class="title">ENCRYPTED FLOW</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <div class="img-container">
+            <span class="video-badge">MOTION</span
+            ><video
+              src="https://cdn.pixabay.com/video/2019/04/16/22845-331206100_large.mp4"
+              muted
+              loop
+              autoplay
+              playsinline
+            ></video>
+          </div>
+          <div class="gallery-caption">
+            <span class="id">17</span><span class="title">NEURAL MAPPING</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <div class="img-container">
+            <img
+              src="https://images.unsplash.com/photo-1551269901-5c5e14c25df7?q=80&w=800"
+            />
+          </div>
+          <div class="gallery-caption">
+            <span class="id">18</span
+            ><span class="title">WASTELAND LIGHTING</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <div class="img-container">
+            <img
+              src="https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?q=80&w=800"
+            />
+          </div>
+          <div class="gallery-caption">
+            <span class="id">19</span
+            ><span class="title">DIGITAL TWIN SIM</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <div class="img-container">
+            <img
+              src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?q=80&w=800"
+            />
+          </div>
+          <div class="gallery-caption">
+            <span class="id">20</span
+            ><span class="title">GEOMETRY ARCHIVE</span>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <div class="img-container">
+            <span class="video-badge">MOTION</span
+            ><video
+              src="https://cdn.pixabay.com/video/2023/10/20/185790-876359051_large.mp4"
+              muted
+              loop
+              autoplay
+              playsinline
+            ></video>
+          </div>
+          <div class="gallery-caption">
+            <span class="id">21</span><span class="title">PULSE GENERATOR</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <div class="img-container">
+            <img
+              src="https://images.unsplash.com/photo-1509228468518-180dd4864904?q=80&w=800"
+            />
+          </div>
+          <div class="gallery-caption">
+            <span class="id">22</span><span class="title">DEEP WEB NODE</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <div class="img-container">
+            <img
+              src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=800"
+            />
+          </div>
+          <div class="gallery-caption">
+            <span class="id">23</span
+            ><span class="title">SYNTHETIC MATERIAL</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <div class="img-container">
+            <img
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800"
+            />
+          </div>
+          <div class="gallery-caption">
+            <span class="id">24</span
+            ><span class="title">ANALYTICS DASHBOARD</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <div class="img-container">
+            <img
+              src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=800"
+            />
+          </div>
+          <div class="gallery-caption">
+            <span class="id">25</span
+            ><span class="title">FRACTAL DIMENSION</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <div class="img-container">
+            <span class="video-badge">MOTION</span
+            ><video
+              src="https://cdn.pixabay.com/video/2016/01/29/1943-153361517_large.mp4"
+              muted
+              loop
+              autoplay
+              playsinline
+            ></video>
+          </div>
+          <div class="gallery-caption">
+            <span class="id">26</span
+            ><span class="title">ORBITAL MECHANICS</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <div class="img-container">
+            <img
+              src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800"
+            />
+          </div>
+          <div class="gallery-caption">
+            <span class="id">27</span
+            ><span class="title">SECURITY PROTOCOL</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <div class="img-container">
+            <img
+              src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=800"
+            />
+          </div>
+          <div class="gallery-caption">
+            <span class="id">28</span><span class="title">SERVR ARRAY 810</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <div class="img-container">
+            <img
+              src="https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=800"
+            />
+          </div>
+          <div class="gallery-caption">
+            <span class="id">29</span
+            ><span class="title">NETWORK TOPOLOGY</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <div class="img-container">
+            <img
+              src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?q=80&w=800"
+            />
+          </div>
+          <div class="gallery-caption">
+            <span class="id">30</span
+            ><span class="title">QUANTUM PROCESSOR</span>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <div class="img-container">
+            <span class="video-badge">MOTION</span
+            ><video
+              src="https://cdn.pixabay.com/video/2020/05/25/40121-425026908_large.mp4"
+              muted
+              loop
+              autoplay
+              playsinline
+            ></video>
+          </div>
+          <div class="gallery-caption">
+            <span class="id">31</span
+            ><span class="title">FIBER OPTIC FLOW</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <div class="img-container">
+            <img
+              src="https://images.unsplash.com/photo-1506774050911-311f1320ea16?q=80&w=800"
+            />
+          </div>
+          <div class="gallery-caption">
+            <span class="id">32</span
+            ><span class="title">SILICON LANDSCAPE</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <div class="img-container">
+            <img
+              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800"
+            />
+          </div>
+          <div class="gallery-caption">
+            <span class="id">33</span
+            ><span class="title">VIRTUAL TERMINAL</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <div class="img-container">
+            <img
+              src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?q=80&w=800"
+            />
+          </div>
+          <div class="gallery-caption">
+            <span class="id">34</span
+            ><span class="title">CODE ARCHITECTURE</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <div class="img-container">
+            <img
+              src="https://images.unsplash.com/photo-1484417894907-623942c8ee29?q=80&w=800"
+            />
+          </div>
+          <div class="gallery-caption">
+            <span class="id">35</span
+            ><span class="title">LOGIC GATE DESIGN</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <div class="img-container">
+            <span class="video-badge">MOTION</span
+            ><video
+              src="https://cdn.pixabay.com/video/2016/10/11/5858-186544075_large.mp4"
+              muted
+              loop
+              autoplay
+              playsinline
+            ></video>
+          </div>
+          <div class="gallery-caption">
+            <span class="id">36</span><span class="title">CORE STABILIZER</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <div class="img-container">
+            <img
+              src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&w=800"
+            />
+          </div>
+          <div class="gallery-caption">
+            <span class="id">37</span
+            ><span class="title">BIOMETRIC SCANNER</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <div class="img-container">
+            <img
+              src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?q=80&w=800"
+            />
+          </div>
+          <div class="gallery-caption">
+            <span class="id">38</span><span class="title">INFRARED SENSOR</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <div class="img-container">
+            <img
+              src="https://images.unsplash.com/photo-1531746790731-6c087fecd05a?q=80&w=800"
+            />
+          </div>
+          <div class="gallery-caption">
+            <span class="id">39</span><span class="title">AI NEURAL PATH</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(this)">
+          <div class="img-container">
+            <img
+              src="https://images.unsplash.com/photo-1451187534959-42563271158d?q=80&w=800"
+            />
+          </div>
+          <div class="gallery-caption">
+            <span class="id">40</span><span class="title">COSMOS DATASET</span>
           </div>
         </div>
       </div>
@@ -235,9 +607,7 @@
     <div id="lightbox" onclick="closeLightbox()">
       <div id="lightbox-content"></div>
     </div>
-
     <footer id="common-footer"></footer>
-
     <script src="assets/js/script.js"></script>
     <script>
       function openLightbox(element) {
@@ -245,33 +615,22 @@
         const content = document.getElementById("lightbox-content");
         const originalMedia = element.querySelector("img, video");
         if (!originalMedia) return;
-
         const media = originalMedia.cloneNode(true);
-
         if (media.tagName === "VIDEO") {
           media.controls = true;
           media.muted = false;
-          // 再生がブロックされた場合のエラー回避
           setTimeout(() => {
-            const playPromise = media.play();
-            if (playPromise !== undefined) {
-              playPromise.catch((error) =>
-                console.log("Auto-play was prevented"),
-              );
-            }
+            media.play().catch(() => {});
           }, 100);
         }
-
         content.innerHTML = "";
         content.appendChild(media);
         lightbox.style.display = "flex";
         document.body.style.overflow = "hidden";
       }
-
       function closeLightbox() {
         const lightbox = document.getElementById("lightbox");
-        const content = document.getElementById("lightbox-content");
-        content.innerHTML = "";
+        document.getElementById("lightbox-content").innerHTML = "";
         lightbox.style.display = "none";
         document.body.style.overflow = "auto";
       }

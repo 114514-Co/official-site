@@ -6,7 +6,7 @@
     <title>News | 114514 & Co.</title>
     <link rel="stylesheet" href="assets/css/style.css" />
     <style>
-      /* ニュース専用の追加スタイル */
+      /* ニュース専用スタイル（既存維持） */
       .news-article {
         border-bottom: 1px solid var(--border-color);
         padding: 40px 0;
@@ -30,7 +30,6 @@
         font-size: 0.9rem;
         margin-bottom: 20px;
       }
-
       .news-read-more {
         color: var(--primary-accent);
         font-size: 0.7rem;
@@ -39,13 +38,9 @@
         padding-bottom: 2px;
         cursor: pointer;
         background: transparent;
-        border-top: none;
-        border-left: none;
-        border-right: none;
+        border: none;
         letter-spacing: 0.2em;
       }
-
-      /* 展開エリアのスタイル（script.jsの制御用） */
       .news-details {
         max-height: 0;
         overflow: hidden;
@@ -67,7 +62,6 @@
         background: rgba(255, 255, 255, 0.03);
         border-left: 1px solid var(--primary-accent);
       }
-
       @media (max-width: 768px) {
         .news-article {
           grid-template-columns: 1fr;
@@ -107,11 +101,10 @@
             </p>
             <button class="news-read-more">READ MORE</button>
             <div class="news-details">
-              私たちのデザインフィロソフィーは「王道」にあります。今回のリニューアルでは、ユーザー体験を最優先し、情報へのアクセシビリティと視覚的な品格を両立させました。今後のプロジェクト展開にご期待ください。
+              私たちのデザインフィロソフィーは「王道」にあります。今回のリニューアルでは、ユーザー体験を最優先し、情報へのアクセシビリティと視覚的な品格を両立させました。
             </div>
           </div>
         </article>
-
         <article class="news-article reveal">
           <div class="news-date">2026.02.15</div>
           <div>
@@ -121,11 +114,10 @@
             </p>
             <button class="news-read-more">READ MORE</button>
             <div class="news-details">
-              最新のライティング技術を駆使し、空気感の表現に徹底的にこだわりました。特に屋内シーンにおける光の拡散と反射のシミュレーションは、既存のゲーム表現の限界を押し広げるものとなっています。
+              最新のライティング技術を駆使し、空気感の表現に徹底的にこだわりました。屋内シーンにおける光の拡散と反射のシミュレーションは、既存の表現の限界を押し広げます。
             </div>
           </div>
         </article>
-
         <article class="news-article reveal">
           <div class="news-date">2026.02.01</div>
           <div>
@@ -135,11 +127,10 @@
             </p>
             <button class="news-read-more">READ MORE</button>
             <div class="news-details">
-              新しいスタジオは「クリエイティブな衝突」をコンセプトに設計されました。オープンなワークスペースと、最新のモーションキャプチャ機材を備え、世界基準のコンテンツ制作を目指します。
+              新しいスタジオは「クリエイティブな衝突」をコンセプトに設計されました。最新のモーションキャプチャ機材を備え、世界基準のコンテンツ制作を目指します。
             </div>
           </div>
         </article>
-
         <article class="news-article reveal">
           <div class="news-date">2026.01.20</div>
           <div>
@@ -153,7 +144,6 @@
             </div>
           </div>
         </article>
-
         <article class="news-article reveal">
           <div class="news-date">2026.01.10</div>
           <div>
@@ -177,11 +167,10 @@
             </p>
             <button class="news-read-more">READ MORE</button>
             <div class="news-details">
-              学生を対象とした実務直結型のプログラムを実施します。トップクラスのクリエイターから直接指導を受けられる貴重な機会を提供し、業界の発展に寄与します。
+              学生を対象とした実務直結型のプログラムを実施します。トップクラスのクリエイターから直接指導を受けられる貴重な機会を提供します。
             </div>
           </div>
         </article>
-
         <article class="news-article reveal">
           <div class="news-date">2025.12.10</div>
           <div>
@@ -195,7 +184,6 @@
             </div>
           </div>
         </article>
-
         <article class="news-article reveal">
           <div class="news-date">2025.11.30</div>
           <div>
@@ -209,11 +197,10 @@
             </div>
           </div>
         </article>
-
         <article class="news-article reveal">
           <div class="news-date">2025.11.15</div>
           <div>
-            <h3 class="news-title">「114514 & Co.」ビジュアルブック発刊決定</h3>
+            <h3 class="news-title">「114514 & Co.」ビジュアルブック発刊</h3>
             <p class="news-summary">
               設立から現在までのコンセプトアートを凝縮した記念すべき一冊が登場。
             </p>
@@ -223,19 +210,148 @@
             </div>
           </div>
         </article>
-
         <article class="news-article reveal">
           <div class="news-date">2025.11.01</div>
           <div>
-            <h3 class="news-title">
-              プレリリース・コミュニティ「THE CORE」発足
-            </h3>
+            <h3 class="news-title">コミュニティ「THE CORE」発足</h3>
             <p class="news-summary">
               熱狂的なファンとともにプロジェクトを磨き上げるクローズドコミュニティを設立。
             </p>
             <button class="news-read-more">READ MORE</button>
             <div class="news-details">
-              開発初期段階からフィードバックを受け、作品を共に完成させていく試みです。限定イベントや先行プレイヤビリティチェックなどの特典を用意しています。
+              開発初期段階からフィードバックを受け、作品を共に完成させていく試みです。限定イベントや先行プレイなどの特典を用意しています。
+            </div>
+          </div>
+        </article>
+
+        <article class="news-article reveal">
+          <div class="news-date">2025.10.20</div>
+          <div>
+            <h3 class="news-title">海外カンファレンスでの登壇決定</h3>
+            <p class="news-summary">
+              世界最大級のゲームデベロッパー会議にて、独自のレンダリング手法について講演します。
+            </p>
+            <button class="news-read-more">READ MORE</button>
+            <div class="news-details">
+              「フォトリアリズムを超えた先にある情緒的表現」をテーマに、我々の技術スタックを世界に向けて公開。業界全体の底上げに寄与します。
+            </div>
+          </div>
+        </article>
+        <article class="news-article reveal">
+          <div class="news-date">2025.09.15</div>
+          <div>
+            <h3 class="news-title">新卒採用 2026年度エントリー受付開始</h3>
+            <p class="news-summary">
+              「常識を疑い、美を追求する」情熱を持った新たな仲間を募集します。
+            </p>
+            <button class="news-read-more">READ MORE</button>
+            <div class="news-details">
+              企画、デザイン、エンジニアリングの各セクションで募集を行います。既成概念にとらわれない、新しい才能との出会いを楽しみにしています。
+            </div>
+          </div>
+        </article>
+        <article class="news-article reveal">
+          <div class="news-date">2025.08.30</div>
+          <div>
+            <h3 class="news-title">メタバース空間内での個展開催</h3>
+            <p class="news-summary">
+              デジタルツイン技術を活用した仮想空間にて、過去のアーカイブ作品を展示。
+            </p>
+            <button class="news-read-more">READ MORE</button>
+            <div class="news-details">
+              物理的な制約を排除した展示空間で、作品の世界観に深く潜り込む体験を提供します。アバターを通じたクリエイターとの交流会も実施予定。
+            </div>
+          </div>
+        </article>
+        <article class="news-article reveal">
+          <div class="news-date">2025.07.12</div>
+          <div>
+            <h3 class="news-title">社内R&D部門「Lab 114」の強化</h3>
+            <p class="news-summary">
+              量子コンピューティングと画像生成AIの統合に向けた新たな研究プロジェクトが始動。
+            </p>
+            <button class="news-read-more">READ MORE</button>
+            <div class="news-details">
+              将来的な開発負荷の軽減と、表現の多様性を両立させるための基盤研究。5年後の業界スタンダードを見据えた投資を行います。
+            </div>
+          </div>
+        </article>
+        <article class="news-article reveal">
+          <div class="news-date">2025.06.05</div>
+          <div>
+            <h3 class="news-title">「Design Award 2025」最優秀賞受賞</h3>
+            <p class="news-summary">
+              昨年公開したインタラクティブ映像作品が、権威あるデザイン賞を受賞しました。
+            </p>
+            <button class="news-read-more">READ MORE</button>
+            <div class="news-details">
+              視覚演出だけでなく、ユーザーの感情を揺さぶる体験設計が高く評価されました。関わった全てのスタッフに感謝するとともに、さらなる高みを目指します。
+            </div>
+          </div>
+        </article>
+
+        <article class="news-article reveal">
+          <div class="news-date">2025.05.20</div>
+          <div>
+            <h3 class="news-title">サーバーインフラの完全クラウド化完了</h3>
+            <p class="news-summary">
+              世界中からの同時アクセスに耐えうる、強固でスケーラブルな基盤へ移行しました。
+            </p>
+            <button class="news-read-more">READ MORE</button>
+            <div class="news-details">
+              グローバル展開に向けた準備が整いました。低遅延なマルチプレイ体験と、安定したコンテンツ配信をお約束します。
+            </div>
+          </div>
+        </article>
+        <article class="news-article reveal">
+          <div class="news-date">2025.04.01</div>
+          <div>
+            <h3 class="news-title">資本提携による事業拡大のお知らせ</h3>
+            <p class="news-summary">
+              多角的なメディア展開を視野に入れ、大手エンタメ企業との資本提携を実施。
+            </p>
+            <button class="news-read-more">READ MORE</button>
+            <div class="news-details">
+              ゲームのみならず、アニメ、映画、マーチャンダイジングなど、IPの価値を最大化させるための戦略的な提携です。
+            </div>
+          </div>
+        </article>
+        <article class="news-article reveal">
+          <div class="news-date">2024.12.15</div>
+          <div>
+            <h3 class="news-title">創業記念パーティ「Night of Genesis」</h3>
+            <p class="news-summary">
+              設立から1年を祝し、関係者・パートナーを招いたプライベートイベントを開催。
+            </p>
+            <button class="news-read-more">READ MORE</button>
+            <div class="news-details">
+              私たちの歩みはまだ始まったばかり。これまでの感謝を伝え、これからのビジョンを共有する、熱い一夜となりました。
+            </div>
+          </div>
+        </article>
+        <article class="news-article reveal">
+          <div class="news-date">2024.10.01</div>
+          <div>
+            <h3 class="news-title">公式Discordサーバーのプレオープン</h3>
+            <p class="news-summary">
+              ユーザーとの直接対話の場として、公式コミュニティの試験運用を開始。
+            </p>
+            <button class="news-read-more">READ MORE</button>
+            <div class="news-details">
+              開発の裏側や、スタッフの日常、最新情報の先行公開など、ファンとの距離を縮めるための施策を順次導入します。
+            </div>
+          </div>
+        </article>
+        <article class="news-article reveal">
+          <div class="news-date">2024.08.10</div>
+          <div>
+            <h3 class="news-title">114514 & Co. 創業声明</h3>
+            <p class="news-summary">
+              「美学と技術の融合」を掲げ、クリエイティブ集団としての第一歩を刻みます。
+            </p>
+            <button class="news-read-more">READ MORE</button>
+            <div class="news-details">
+              何が王道か。何が美しいか。私たちは常に問い続け、世界を驚かせるコンテンツを生み出し続けます。ここから全ての物語が始まります。
             </div>
           </div>
         </article>
@@ -243,22 +359,16 @@
     </main>
 
     <footer id="common-footer"></footer>
-
     <script src="assets/js/script.js"></script>
     <script>
-      // news.html 専用の展開スクリプト
       document.addEventListener("DOMContentLoaded", () => {
         const newsButtons = document.querySelectorAll(".news-read-more");
-
         newsButtons.forEach((button) => {
           button.addEventListener("click", () => {
             const details = button.nextElementSibling;
             const isActive = details.classList.toggle("active");
-
             button.textContent = isActive ? "CLOSE" : "READ MORE";
-
             if (isActive) {
-              // 少しだけスクロールして見やすくする
               setTimeout(() => {
                 details.scrollIntoView({
                   behavior: "smooth",
