@@ -25,7 +25,7 @@ body {
   letter-spacing: 0.05em;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  width: 100%; /* はみ出し防止 */
+  width: 100%;
 }
 
 /* --- Loading System --- */
@@ -559,9 +559,8 @@ footer {
   transform: translateY(0);
 }
 
-/* --- Responsive (はみ出し徹底対策版) --- */
+/* --- Responsive (はみ出し・改行徹底対策版) --- */
 @media (max-width: 768px) {
-  /* ナビゲーションのはみ出し対策 */
   nav {
     padding: 0 15px;
     height: 70px;
@@ -576,9 +575,8 @@ footer {
     letter-spacing: 0.05em;
   }
 
-  /* ヒーローセクションの文字あふれ防止 */
   .glitch {
-    font-size: 3rem; /* 固定サイズに近い設定にしてはみ出しを防ぐ */
+    font-size: 3rem;
     line-height: 1.2;
     word-wrap: break-word;
   }
@@ -588,9 +586,8 @@ footer {
     padding: 0 10px;
   }
 
-  /* グリッドカードの最小幅をリセット */
   .visual-panel-grid {
-    grid-template-columns: 1fr; /* スマホでは強制1列 */
+    grid-template-columns: 1fr;
     gap: 20px;
   }
 
@@ -610,14 +607,23 @@ footer {
     font-size: 1.8rem;
   }
 
-  /* コンテナのパディング調整 */
+  /* --- スマホ時の改行禁止設定 --- */
+  .spec-item {
+    white-space: nowrap; /* 改行を禁止 */
+    font-size: 0.65rem; /* わずかに縮小して1行に収める */
+    letter-spacing: 0.02em; /* 字間を微調整 */
+  }
+  .specs-grid {
+    gap: 10px 15px;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
   .container {
     padding: 0 20px;
     width: 100%;
     box-sizing: border-box;
   }
 
-  /* フッターの中央寄せとはみ出し防止 */
   .footer-container,
   .footer-sns,
   .footer-links {
@@ -632,13 +638,11 @@ footer {
     font-size: 0.6rem;
   }
 
-  /* サウンドコントロール */
   .system-sound-control {
     transform: scale(0.85);
     margin: 10px 0;
   }
 
-  /* TOPボタン */
   #back-to-top {
     right: 20px;
     bottom: 20px;
@@ -649,7 +653,6 @@ footer {
     border: 1px solid var(--border-color);
   }
 
-  /* Cookie Banner の文字あふれ防止 */
   .cookie-content {
     flex-direction: column;
     gap: 15px;
@@ -658,17 +661,16 @@ footer {
   }
 }
 
-/* 極小デバイス(iPhone SE等)用 */
+/* 極小デバイス用 */
 @media (max-width: 380px) {
-  .nav-links {
-    display: flex;
-    gap: 8px;
-  }
   .nav-links a {
-    margin-left: 0;
+    margin-left: 8px;
     font-size: 0.55rem;
   }
   .glitch {
     font-size: 2.2rem;
+  }
+  .spec-item {
+    font-size: 0.6rem; /* さらに小さい画面向けに調整 */
   }
 }
