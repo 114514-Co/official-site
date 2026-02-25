@@ -21,7 +21,7 @@
     </a>
 
     <a
-      href="https://youtube.com/your-account"
+      href="https://www.youtube.com/channel/UCUy3YgI-6Ry2W4s4mfu_XMQ"
       target="_blank"
       aria-label="YouTube"
     >
