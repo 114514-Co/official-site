@@ -1,75 +1,145 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Legal Notice | 114514 & Co.</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <style>
+      /* 特商法ページ専用の追加レスポンシブスタイル */
+      .legal-row {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: 20px;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 15px;
+      }
+
+      .legal-data {
+        margin: 0;
+        word-break: break-all; /* 長いメールアドレスの改行対策 */
+      }
+
+      @media (max-width: 768px) {
+        .legal-row {
+          grid-template-columns: 1fr; /* スマホでは縦並びに */
+          gap: 5px;
+        }
+        .recruit-box {
+          padding: 40px 20px !important; /* 余白を調整 */
+        }
+      }
+    </style>
+  </head>
+  <body>
     <div id="ambient-light"></div>
 
-<nav id="common-header"></nav>
+    <nav id="common-header"></nav>
 
     <main class="container">
-        <h2 class="section-title reveal" style="font-size: clamp(2rem, 5vw, 3rem);">LEGAL NOTICE</h2>
-        
-        <p class="reveal" style="text-align: center; margin-bottom: 60px; color: var(--secondary-accent); font-size: 0.8rem; letter-spacing: 0.1em;">
-            特定商取引法に基づく表記
-        </p>
+      <h2
+        class="section-title reveal"
+        style="font-size: clamp(2rem, 5vw, 3rem)"
+      >
+        LEGAL NOTICE
+      </h2>
 
-        <section class="reveal" style="max-width: 800px; margin: 0 auto 100px;">
-            <div class="recruit-box" style="text-align: left; padding: 60px 40px; border-radius: 2px;">
-                
-                <div style="display: flex; flex-direction: column; gap: 25px;">
-                    
-                    <dl style="display: grid; grid-template-columns: 200px 1fr; gap: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px;">
-                        <dt style="color: var(--secondary-accent); font-size: 0.75rem; letter-spacing: 0.1em;">販売業者</dt>
-                        <dd style="margin: 0; font-weight: 600;">114514 & Co.</dd>
-                    </dl>
+      <p
+        class="reveal"
+        style="
+          text-align: center;
+          margin-bottom: 60px;
+          color: var(--secondary-accent);
+          font-size: 0.8rem;
+          letter-spacing: 0.1em;
+        "
+      >
+        特定商取引法に基づく表記
+      </p>
 
-                    <dl style="display: grid; grid-template-columns: 200px 1fr; gap: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px;">
-                        <dt style="color: var(--secondary-accent); font-size: 0.75rem;">代表責任者</dt>
-                        <dd style="margin: 0;">[代表者名を記入]</dd>
-                    </dl>
+      <section class="reveal" style="max-width: 800px; margin: 0 auto 100px">
+        <div
+          class="recruit-box"
+          style="text-align: left; padding: 60px 40px; border-radius: 2px"
+        >
+          <div style="display: flex; flex-direction: column; gap: 25px">
+            <dl class="legal-row">
+              <dt
+                style="
+                  color: var(--secondary-accent);
+                  font-size: 0.75rem;
+                  letter-spacing: 0.1em;
+                "
+              >
+                販売業者
+              </dt>
+              <dd class="legal-data" style="font-weight: 600">114514 & Co.</dd>
+            </dl>
 
-                    <dl style="display: grid; grid-template-columns: 200px 1fr; gap: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px;">
-                        <dt style="color: var(--secondary-accent); font-size: 0.75rem;">所在地</dt>
-                        <dd style="margin: 0;">東京都世田谷区<br><span style="font-size: 0.8rem; color: #555;">(以下、請求により遅滞なく開示します)</span></dd>
-                    </dl>
+            <dl class="legal-row">
+              <dt style="color: var(--secondary-accent); font-size: 0.75rem">
+                代表責任者
+              </dt>
+              <dd class="legal-data">鈴木 亮 (Ryo Suzuki)</dd>
+            </dl>
 
-                    <dl style="display: grid; grid-template-columns: 200px 1fr; gap: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px;">
-                        <dt style="color: var(--secondary-accent); font-size: 0.75rem;">メールアドレス</dt>
-                        <dd style="margin: 0;">your-email@example.com</dd>
-                    </dl>
+            <dl class="legal-row">
+              <dt style="color: var(--secondary-accent); font-size: 0.75rem">
+                所在地
+              </dt>
+              <dd class="legal-data">
+                東京都世田谷区下北沢<br /><span
+                  style="font-size: 0.8rem; color: #555"
+                  >(以下、請求により遅滞なく開示します)</span
+                >
+              </dd>
+            </dl>
 
-                    <dl style="display: grid; grid-template-columns: 200px 1fr; gap: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px;">
-                        <dt style="color: var(--secondary-accent); font-size: 0.75rem;">販売価格</dt>
-                        <dd style="margin: 0;">各サービス内の購入ページに表示</dd>
-                    </dl>
+            <dl class="legal-row">
+              <dt style="color: var(--secondary-accent); font-size: 0.75rem">
+                メールアドレス
+              </dt>
+              <dd class="legal-data">yaju-senpai@114514.co.jp</dd>
+            </dl>
 
-                    <dl style="display: grid; grid-template-columns: 200px 1fr; gap: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px;">
-                        <dt style="color: var(--secondary-accent); font-size: 0.75rem;">支払方法</dt>
-                        <dd style="margin: 0;">プラットフォーム決済 (App Store / Google Play)</dd>
-                    </dl>
+            <dl class="legal-row">
+              <dt style="color: var(--secondary-accent); font-size: 0.75rem">
+                販売価格
+              </dt>
+              <dd class="legal-data">各サービス内の購入ページに表示</dd>
+            </dl>
 
-                    <dl style="display: grid; grid-template-columns: 200px 1fr; gap: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px;">
-                        <dt style="color: var(--secondary-accent); font-size: 0.75rem;">引渡時期</dt>
-                        <dd style="margin: 0;">決済完了後、直ちに提供</dd>
-                    </dl>
+            <dl class="legal-row">
+              <dt style="color: var(--secondary-accent); font-size: 0.75rem">
+                支払方法
+              </dt>
+              <dd class="legal-data">
+                プラットフォーム決済 (App Store / Google Play)
+              </dd>
+            </dl>
 
-                    <dl style="display: grid; grid-template-columns: 200px 1fr; gap: 20px;">
-                        <dt style="color: var(--secondary-accent); font-size: 0.75rem;">返品・キャンセル</dt>
-                        <dd style="margin: 0;">デジタルコンテンツの性質上、返品・返金は承っておりません。</dd>
-                    </dl>
+            <dl class="legal-row">
+              <dt style="color: var(--secondary-accent); font-size: 0.75rem">
+                引渡時期
+              </dt>
+              <dd class="legal-data">決済完了後、直ちに提供</dd>
+            </dl>
 
-                </div>
-            </div>
-        </section>
+            <dl class="legal-row" style="border-bottom: none">
+              <dt style="color: var(--secondary-accent); font-size: 0.75rem">
+                返品・キャンセル
+              </dt>
+              <dd class="legal-data">
+                デジタルコンテンツの性質上、返品・返金は承っておりません。
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </section>
     </main>
 
-<footer id="common-footer"></footer>
+    <footer id="common-footer"></footer>
 
     <script src="assets/js/script.js"></script>
-</body>
+  </body>
 </html>
