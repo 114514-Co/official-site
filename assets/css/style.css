@@ -60,7 +60,6 @@ nav {
   z-index: 2100;
 }
 
-/* 検索とボタンのコンテナ */
 .nav-right {
   display: flex;
   align-items: center;
@@ -68,7 +67,6 @@ nav {
   z-index: 2100;
 }
 
-/* 検索窓の基本設定 */
 .search-container {
   display: flex;
   align-items: center;
@@ -107,7 +105,6 @@ nav {
   color: var(--primary-accent);
 }
 
-/* ハンバーガーボタン（PCでは非表示） */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -124,7 +121,7 @@ nav {
   transition: 0.3s var(--ease-out-expo);
 }
 
-/* --- (中略: Loading, Hero, Panels などの設定) --- */
+/* --- Loading --- */
 #loading-screen {
   position: fixed;
   inset: 0;
@@ -187,6 +184,8 @@ body.loaded #loading-screen {
     filter: blur(1px);
   }
 }
+
+/* --- Hero --- */
 .hero-section {
   min-height: 80vh;
   display: flex;
@@ -208,6 +207,8 @@ body.loaded #loading-screen {
   margin-top: 24px;
   color: var(--primary-accent);
 }
+
+/* --- Panels & Grid --- */
 .visual-panel-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -301,6 +302,8 @@ body.loaded #loading-screen {
   color: #000;
   letter-spacing: 0.2em;
 }
+
+/* --- Details --- */
 .details-content {
   max-height: 0;
   overflow: hidden;
@@ -385,6 +388,8 @@ body.loaded #loading-screen {
   margin-right: 8px;
   font-weight: 200;
 }
+
+/* --- Philosophy --- */
 .philosophy-section {
   text-align: center;
   max-width: 900px;
@@ -398,6 +403,8 @@ body.loaded #loading-screen {
   margin-bottom: 40px;
   display: block;
 }
+
+/* --- Footer --- */
 footer {
   padding: 80px 0;
   text-align: center;
@@ -486,6 +493,8 @@ footer {
   color: var(--secondary-accent);
   opacity: 0.5;
 }
+
+/* --- UI Elements --- */
 #back-to-top {
   position: fixed;
   right: 40px;
@@ -502,7 +511,6 @@ footer {
   opacity: 0.7;
   text-decoration: none !important;
   transition: all 0.3s ease;
-  -webkit-tap-highlight-color: transparent;
 }
 @media (hover: hover) {
   #back-to-top:hover {
@@ -511,9 +519,6 @@ footer {
     color: #000;
     transform: translateY(-5px);
   }
-}
-#back-to-top:active {
-  background: rgba(255, 255, 255, 0.2);
 }
 .section-title {
   text-align: center;
@@ -541,48 +546,50 @@ footer {
 /* --- Responsive (改行・はみ出し徹底修正版) --- */
 @media (max-width: 768px) {
   nav {
-    padding: 0 15px;
+    padding: 0 12px; /* 余白を最小に */
     height: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: nowrap; /* 絶対に折り返さない */
+    flex-wrap: nowrap !important; /* 絶対に折り返さない */
   }
 
   .nav-logo {
-    font-size: 0.75rem; /* スマホ用にリサイズ */
-    white-space: nowrap; /* 社名の改行を禁止 */
-    letter-spacing: 0.15em;
-    flex-shrink: 1; /* ロゴの縮小を許可して空間を確保 */
-    margin-right: 10px;
+    font-size: 0.7rem !important; /* 文字を少し縮小 */
+    white-space: nowrap !important; /* 社名の改行を禁止 */
+    letter-spacing: 0.1em !important;
+    flex-shrink: 1; /* 空間に合わせてロゴ自体が縮むのを許可 */
+    min-width: 0; /* ブラウザの最小幅制限を無視 */
+    margin-right: 5px;
   }
 
   .nav-right {
     display: flex;
     align-items: center;
-    gap: 12px; /* パーツ間の距離を最適化 */
-    flex-shrink: 0; /* 右側のセットは潰さない */
+    gap: 8px; /* 要素間を詰める */
+    flex-shrink: 0; /* 右側パーツ群は潰さない */
+    flex-wrap: nowrap !important;
   }
 
-  /* 検索窓のスマホ対応 */
   .search-container {
-    width: auto;
+    width: auto !important;
     display: flex;
     align-items: center;
   }
 
   .search-input {
-    width: 80px; /* PCより短くしてロゴとの干渉を防ぐ */
-    font-size: 0.7rem;
-    padding: 4px 8px;
+    width: 70px !important; /* スマホでは大幅に短く */
+    font-size: 0.65rem;
+    padding: 4px 6px;
+    flex-shrink: 0;
   }
 
-  /* ハンバーガーボタンを表示 */
   .menu-toggle {
     display: flex;
     flex-shrink: 0;
   }
 
+  /* ハンバーガーメニューのアニメーション */
   .menu-toggle.is-active .bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
@@ -608,55 +615,58 @@ footer {
     transition: 0.5s var(--ease-out-expo);
     z-index: 2000;
   }
-
   .nav-links.active {
     right: 0;
   }
-
   .nav-links a {
     margin: 20px 0;
     font-size: 1.2rem;
     letter-spacing: 0.4em;
     color: var(--primary-accent);
+    margin-left: 0;
   }
 
-  /* コンテンツ部分の調整 */
+  /* コンテンツ調整 */
   .glitch {
     font-size: 2.8rem;
   }
   .project-panel {
     flex-direction: column;
+    min-height: auto;
   }
   .project-overlay {
     padding: 40px 20px;
     background: rgba(0, 0, 0, 0.9);
-  }
-  .specs-grid {
-    grid-template-columns: 1fr;
-  }
-  .spec-item {
-    font-size: 0.75rem;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--border-color);
-    padding: 8px 0;
+    text-align: center;
   }
   .btn {
     width: 100%;
     max-width: 280px;
   }
+  .specs-grid {
+    grid-template-columns: 1fr;
+  }
+  .spec-item {
+    border-bottom: 1px solid var(--border-color);
+    padding: 8px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  #back-to-top {
+    right: 20px;
+    bottom: 20px;
+    padding: 10px 15px;
+    font-size: 0.7rem;
+  }
 }
 
-/* 超小型デバイス (iPhone SE 第1世代など) 向け */
-@media (max-width: 360px) {
+/* 超小型デバイス (iPhone SE 第1世代など) 向け最終防衛ライン */
+@media (max-width: 350px) {
   .nav-logo {
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
+    font-size: 0.65rem !important;
+    letter-spacing: 0.05em !important;
   }
   .search-input {
-    width: 60px;
-  }
-  .nav-right {
-    gap: 8px;
-  }
+    display: none;
+  } /* 350px以下の場合は検索窓を消してアイコンのみに */
 }
