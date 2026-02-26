@@ -73,10 +73,14 @@
             style="position: absolute; inset: 0; z-index: 1"
           >
             <img
-              src="https://images.unsplash.com/photo-1534423839368-1791a1df279f?auto=format&fit=crop&q=80&w=1600"
+              src="https://images.unsplash.com/photo-1534423839368-1791a1df279f?q=80&w=1600"
               alt="Project 810 Background"
               class="panel-img"
               style="width: 100%; height: 100%; object-fit: cover"
+              onerror="
+                this.style.display = 'none';
+                this.parentNode.style.backgroundColor = '#1a1a1a';
+              "
             />
           </div>
 
